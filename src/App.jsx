@@ -3,6 +3,7 @@ import Footer from './components/Footer';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Services from './sections/Services';
+import Clinic from './sections/Clinic';
 import Testimonials from './sections/Testimonials';
 import Contact from './sections/Contact';
 import './styles/global.css';
@@ -15,6 +16,7 @@ function App() {
         <Hero />
         <About />
         <Services />
+        <Clinic />
         <Testimonials />
         <Contact />
       </main>

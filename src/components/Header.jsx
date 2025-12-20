@@ -7,11 +7,19 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [isMobileMenuOpen]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -22,47 +30,75 @@ const Header = () => {
   };
 
   const navItems = [
-    { id: 'hero', label: 'ראשי' },
     { id: 'about', label: 'אודות' },
-    { id: 'services', label: 'שירותים' },
+    { id: 'services', label: 'טיפולים' },
+    { id: 'clinic', label: 'המרפאה' },
     { id: 'testimonials', label: 'המלצות' },
     { id: 'contact', label: 'צור קשר' },
   ];
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="header-container">
-        <div className="logo" onClick={() => scrollToSection('hero')}>
-          <span className="logo-icon">🦷</span>
-          <span className="logo-text">DocSpa</span>
+    <>
+      <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
+        <div className="header-inner">
+          <div className="header-logo" onClick={() => scrollToSection('hero')}>
+            <span className="logo-text">DocSpa</span>
+          </div>
+
+          <nav className="header-nav">
+            <ul className="nav-list">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <button
+                    className="nav-link"
+                    onClick={() => scrollToSection(item.id)}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <button
+            className="header-cta"
+            onClick={() => scrollToSection('contact')}
+          >
+            קביעת תור
+          </button>
+
+          <button
+            className={`mobile-toggle ${isMobileMenuOpen ? 'active' : ''}`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="תפריט"
+          >
+            <span className="toggle-line"></span>
+            <span className="toggle-line"></span>
+          </button>
         </div>
+      </header>
 
-        <nav className={`nav ${isMobileMenuOpen ? 'open' : ''}`}>
-          <ul className="nav-list">
-            {navItems.map((item) => (
-              <li key={item.id}>
-                <button
-                  className="nav-link"
-                  onClick={() => scrollToSection(item.id)}
-                >
-                  {item.label}
-                </button>
-              </li>
-            ))}
-          </ul>
+      {/* Mobile Menu Overlay */}
+      <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+        <nav className="mobile-nav">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              className="mobile-nav-link"
+              onClick={() => scrollToSection(item.id)}
+            >
+              {item.label}
+            </button>
+          ))}
+          <button
+            className="mobile-cta"
+            onClick={() => scrollToSection('contact')}
+          >
+            קביעת תור
+          </button>
         </nav>
-
-        <button
-          className={`mobile-menu-btn ${isMobileMenuOpen ? 'open' : ''}`}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="תפריט"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
-    </header>
+    </>
   );
 };
 

@@ -1,38 +1,48 @@
 # DocSpa - Dental Clinic Landing Page
 
-A modern, responsive landing page for a dental clinic built with React and Vite. Features RTL (Right-to-Left) support for Hebrew content and a clean, professional medical aesthetic.
+A premium, Apple-inspired landing page for Dr. Amit Moritz's dental clinic in Rehovot. Built with React and Vite, featuring RTL support for Hebrew, smooth scroll animations, and a clean medical aesthetic.
+
+## Design
+
+- **Apple-inspired aesthetic** - Clean layouts, generous white space, large typography
+- **Smooth animations** - Fade-in and scale animations on scroll
+- **Card-based design** - Rounded corners, soft shadows, subtle depth
+- **Medical color palette** - White, light gray, soft blue accents
 
 ## Features
 
 - Single-page landing with smooth scroll navigation
 - Mobile-responsive design
 - RTL (Hebrew) support
-- Clean, professional medical theme
-- Component-based architecture
+- Intersection Observer scroll animations
+- Backdrop blur glass-morphism header
+- Premium card components
 
 ## Sections
 
-- **Header** - Fixed navigation with smooth scroll links
-- **Hero** - Welcome message with CTA button
-- **About** - Clinic information and statistics
-- **Services** - Dental services offered
-- **Testimonials** - Patient reviews
-- **Contact** - Contact information and working hours
-- **Footer** - Quick links and social media
+- **Header** - Fixed navigation with frosted glass effect
+- **Hero** - Dr. Amit Moritz introduction with CTA
+- **About** - Professional background and highlights
+- **Services** - Dental services in Apple-style cards
+- **Clinic** - Modern facility features
+- **Testimonials** - Patient reviews in elegant cards
+- **Contact** - Address in Rehovot, phone, working hours
+- **Footer** - Minimal Apple-style footer
 
 ## Tech Stack
 
 - React 18
 - Vite
 - CSS3 (CSS Variables, Flexbox, Grid)
+- Heebo Font (Hebrew optimized)
 
 ## Project Structure
 
 ```
 src/
-├── components/      # Reusable components (Header, Footer)
-├── sections/        # Page sections (Hero, About, Services, etc.)
-├── styles/          # Global styles
+├── components/      # Header, Footer
+├── sections/        # Hero, About, Services, Clinic, Testimonials, Contact
+├── styles/          # Global design system
 └── assets/          # Static assets
 ```
 
@@ -45,23 +55,14 @@ src/
 
 ### Installation
 
-1. Clone the repository:
 ```bash
 git clone https://github.com/YOUR_USERNAME/DocSpa.git
 cd DocSpa
-```
-
-2. Install dependencies:
-```bash
 npm install
-```
-
-3. Start the development server:
-```bash
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+Open `http://localhost:5173` in your browser.
 
 ### Build for Production
 
@@ -69,36 +70,34 @@ npm run dev
 npm run build
 ```
 
-The built files will be in the `dist` directory.
-
-### Preview Production Build
-
-```bash
-npm run preview
-```
-
 ## Customization
 
 ### Colors
 
-Edit the CSS variables in `src/styles/global.css`:
+Edit CSS variables in `src/styles/global.css`:
 
 ```css
 :root {
-  --primary-color: #2E86AB;
-  --secondary-color: #57C5B6;
-  --text-primary: #1A3A4A;
-  /* ... */
+  --color-primary: #0071e3;
+  --color-black: #1d1d1f;
+  --color-gray: #6e6e73;
+  --color-gray-bg: #f5f5f7;
 }
 ```
 
 ### Content
 
-Update the Hebrew text and content in the section components located in `src/sections/`.
+Update Hebrew text in the section components under `src/sections/`.
 
 ### Images
 
-Replace placeholder components with actual images in the respective section files.
+Replace emoji placeholders with actual images in the section files.
+
+## Doctor Information
+
+- **Name**: ד״ר עמית מוריץ (Dr. Amit Moritz)
+- **Profession**: רופאת שיניים (Dentist)
+- **Location**: מרפאה פרטית ברחובות (Private clinic in Rehovot)
 
 ## License
 

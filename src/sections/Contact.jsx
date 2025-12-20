@@ -1,26 +1,26 @@
+import { useEffect, useRef } from 'react';
 import './Contact.css';
 
 const Contact = () => {
-  const contactInfo = [
-    {
-      icon: '📞',
-      title: 'טלפון',
-      details: ['03-1234567', '050-1234567'],
-      link: 'tel:03-1234567',
-    },
-    {
-      icon: '📧',
-      title: 'דוא"ל',
-      details: ['info@docspa.co.il'],
-      link: 'mailto:info@docspa.co.il',
-    },
-    {
-      icon: '📍',
-      title: 'כתובת',
-      details: ['רחוב הרופאים 15', 'תל אביב, ישראל'],
-      link: null,
-    },
-  ];
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   const workingHours = [
     { day: 'ראשון - חמישי', hours: '08:00 - 20:00' },
@@ -29,53 +29,72 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="contact section">
+    <section id="contact" className="contact section section-gray" ref={sectionRef}>
       <div className="container">
-        <div className="section-title">
-          <h2>צור קשר</h2>
-          <p>נשמח לענות על כל שאלה ולקבוע עבורכם תור</p>
+        <div className="contact-header animate-on-scroll fade-in">
+          <p className="eyebrow text-primary">צור קשר</p>
+          <h2 className="headline-medium">
+            נשמח לשמוע מכם
+          </h2>
+          <p className="contact-subtitle">
+            לקביעת תור או לכל שאלה, אנחנו כאן בשבילכם
+          </p>
         </div>
 
-        <div className="contact-container">
-          <div className="contact-info-grid">
-            {contactInfo.map((info, index) => (
-              <div key={index} className="contact-card card">
-                <span className="contact-icon">{info.icon}</span>
-                <h3 className="contact-title">{info.title}</h3>
-                <div className="contact-details">
-                  {info.details.map((detail, i) => (
-                    <span key={i}>
-                      {info.link ? (
-                        <a href={info.link}>{detail}</a>
-                      ) : (
-                        detail
-                      )}
-                    </span>
-                  ))}
-                </div>
+        <div className="contact-grid">
+          {/* Contact Info Card */}
+          <div className="contact-card animate-on-scroll fade-in stagger-1">
+            <div className="contact-item">
+              <span className="contact-icon">📍</span>
+              <div className="contact-content">
+                <h4>כתובת</h4>
+                <p>רחוב הרצל 50<br />רחובות, ישראל</p>
               </div>
-            ))}
+            </div>
+
+            <div className="contact-item">
+              <span className="contact-icon">📞</span>
+              <div className="contact-content">
+                <h4>טלפון</h4>
+                <a href="tel:08-1234567">08-1234567</a>
+              </div>
+            </div>
+
+            <div className="contact-item">
+              <span className="contact-icon">📧</span>
+              <div className="contact-content">
+                <h4>דוא״ל</h4>
+                <a href="mailto:info@docspa.co.il">info@docspa.co.il</a>
+              </div>
+            </div>
+
+            <a href="tel:08-1234567" className="btn btn-primary contact-cta">
+              התקשרו עכשיו
+            </a>
           </div>
 
-          <div className="hours-section">
-            <div className="hours-card card">
+          {/* Working Hours Card */}
+          <div className="hours-card animate-on-scroll fade-in stagger-2">
+            <div className="hours-header">
               <span className="hours-icon">🕐</span>
               <h3>שעות פעילות</h3>
-              <div className="hours-list">
-                {workingHours.map((item, index) => (
-                  <div key={index} className="hours-row">
-                    <span className="hours-day">{item.day}</span>
-                    <span className="hours-time">{item.hours}</span>
-                  </div>
-                ))}
-              </div>
+            </div>
+            <div className="hours-list">
+              {workingHours.map((item, index) => (
+                <div key={index} className="hours-row">
+                  <span className="hours-day">{item.day}</span>
+                  <span className="hours-time">{item.hours}</span>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="map-placeholder">
-            <div className="map-content">
-              <span className="map-icon">🗺️</span>
-              <span className="map-text">מפה - Google Maps</span>
+          {/* Map Placeholder */}
+          <div className="map-card animate-on-scroll scale-in stagger-3">
+            <div className="map-placeholder">
+              <span className="map-pin">📍</span>
+              <span className="map-label">מפת המרפאה</span>
+              <span className="map-address">רחוב הרצל 50, רחובות</span>
             </div>
           </div>
         </div>

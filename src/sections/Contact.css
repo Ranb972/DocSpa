@@ -1,89 +1,118 @@
-/* Contact Section Styles */
+/* Contact Section - Apple-Inspired */
 .contact {
-  background-color: var(--bg-section);
+  overflow: hidden;
 }
 
-.contact-container {
+.contact-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.contact-header .eyebrow {
+  margin-bottom: 12px;
+}
+
+.contact-subtitle {
+  font-size: 19px;
+  color: var(--color-gray);
+  margin-top: 20px;
+}
+
+/* Contact Grid */
+.contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 24px;
 }
 
-.contact-info-grid {
+/* Contact Info Card */
+.contact-card {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 28px;
 }
 
-.contact-card {
+.contact-item {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 25px;
+  align-items: flex-start;
+  gap: 16px;
 }
 
 .contact-icon {
-  font-size: 2rem;
+  font-size: 28px;
+  line-height: 1;
   flex-shrink: 0;
 }
 
-.contact-title {
-  font-size: 1rem;
-  margin-bottom: 5px;
-  color: var(--text-primary);
+.contact-content h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: 4px;
 }
 
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
+.contact-content p {
+  font-size: 15px;
+  color: var(--color-gray);
+  line-height: 1.5;
 }
 
-.contact-details span {
-  color: var(--text-secondary);
+.contact-content a {
+  font-size: 15px;
+  color: var(--color-primary);
+  text-decoration: none;
 }
 
-.contact-details a {
-  color: var(--primary-color);
-}
-
-.contact-details a:hover {
+.contact-content a:hover {
   text-decoration: underline;
 }
 
-/* Working Hours */
-.hours-section {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.contact-cta {
+  margin-top: auto;
+  width: 100%;
 }
 
+/* Hours Card */
 .hours-card {
-  padding: 30px;
-  text-align: center;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-md);
+}
+
+.hours-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
 }
 
 .hours-icon {
-  font-size: 2.5rem;
-  display: block;
-  margin-bottom: 15px;
+  font-size: 28px;
+  line-height: 1;
 }
 
-.hours-card h3 {
-  margin-bottom: 20px;
+.hours-header h3 {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--color-black);
 }
 
 .hours-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .hours-row {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-gray-lighter);
 }
 
 .hours-row:last-child {
@@ -92,58 +121,81 @@
 }
 
 .hours-day {
-  color: var(--text-primary);
+  font-size: 15px;
   font-weight: 500;
+  color: var(--color-black);
 }
 
 .hours-time {
-  color: var(--primary-color);
+  font-size: 15px;
   font-weight: 600;
+  color: var(--color-primary);
 }
 
-/* Map Placeholder */
-.map-placeholder {
+/* Map Card */
+.map-card {
   grid-column: 1 / -1;
-  background: linear-gradient(135deg, var(--bg-light) 0%, var(--border-color) 100%);
-  border-radius: 12px;
-  min-height: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
 }
 
-.map-content {
+.map-placeholder {
+  width: 100%;
+  min-height: 280px;
+  background: linear-gradient(180deg, #e8f4fd 0%, #d4e9f7 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 12px;
 }
 
-.map-icon {
-  font-size: 3rem;
+.map-pin {
+  font-size: 48px;
+  line-height: 1;
 }
 
-.map-text {
-  color: var(--text-light);
+.map-label {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--color-gray);
+}
+
+.map-address {
+  font-size: 14px;
+  color: var(--color-gray-light);
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .contact-container {
+@media (max-width: 834px) {
+  .contact-header {
+    margin-bottom: 48px;
+  }
+
+  .contact-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
-  .contact-card {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-  }
-
-  .contact-details {
-    align-items: center;
+  .contact-card,
+  .hours-card {
+    padding: 32px;
   }
 
   .map-placeholder {
-    min-height: 200px;
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-card,
+  .hours-card {
+    padding: 24px;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }

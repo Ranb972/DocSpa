@@ -1,65 +1,92 @@
+import { useEffect, useRef } from 'react';
 import './Services.css';
 
 const Services = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const services = [
-    {
-      icon: '🪥',
-      title: 'ניקוי שיניים מקצועי',
-      description: 'ניקוי יסודי והסרת אבנית לשמירה על בריאות החניכיים והשיניים',
-    },
     {
       icon: '✨',
       title: 'הלבנת שיניים',
-      description: 'טיפולי הלבנה מתקדמים להשגת חיוך לבן וזוהר בטכנולוגיה המתקדמת ביותר',
+      description: 'טיפולי הלבנה מתקדמים להשגת חיוך לבן וזוהר',
+      link: '#contact',
     },
     {
       icon: '🦷',
-      title: 'השתלות שיניים',
-      description: 'השתלות מתקדמות לשיקום שיניים חסרות עם תוצאות טבעיות ועמידות',
-    },
-    {
-      icon: '👑',
-      title: 'כתרים וגשרים',
-      description: 'שחזורים אסתטיים ופונקציונליים מחומרים איכותיים המותאמים לצבע השן',
-    },
-    {
-      icon: '📐',
-      title: 'יישור שיניים',
-      description: 'טיפולי יישור מתקדמים כולל קשתיות שקופות ליישור דיסקרטי ונוח',
-    },
-    {
-      icon: '🔬',
-      title: 'טיפולי שורש',
-      description: 'טיפולי שורש מקצועיים להצלת שיניים פגועות ומניעת עקירה',
-    },
-    {
-      icon: '👶',
-      title: 'רפואת שיניים לילדים',
-      description: 'טיפולים מותאמים לילדים באווירה ידידותית ונעימה',
+      title: 'השתלות',
+      description: 'השתלות מתקדמות לשיקום שיניים עם תוצאות טבעיות',
+      link: '#contact',
     },
     {
       icon: '💎',
       title: 'אסתטיקה דנטלית',
-      description: 'ציפויי חרסינה, סגירת רווחים ועיצוב חיוך מושלם',
+      description: 'ציפויים ועיצוב חיוך מושלם בהתאמה אישית',
+      link: '#contact',
+    },
+    {
+      icon: '🪥',
+      title: 'טיפולים מונעים',
+      description: 'ניקוי מקצועי ושמירה על בריאות הפה',
+      link: '#contact',
     },
   ];
 
   return (
-    <section id="services" className="services section">
+    <section id="services" className="services section section-light" ref={sectionRef}>
       <div className="container">
-        <div className="section-title">
-          <h2>השירותים שלנו</h2>
-          <p>אנו מציעים מגוון רחב של טיפולי שיניים מתקדמים לכל המשפחה</p>
+        <div className="services-header animate-on-scroll fade-in">
+          <p className="eyebrow text-primary">טיפולים</p>
+          <h2 className="headline-medium">
+            מגוון טיפולים מתקדמים
+          </h2>
+          <p className="services-subtitle">
+            המרפאה מציעה מגוון רחב של טיפולי שיניים באיכות הגבוהה ביותר
+          </p>
         </div>
 
         <div className="services-grid">
           {services.map((service, index) => (
-            <div key={index} className="service-card card">
-              <span className="service-icon">{service.icon}</span>
-              <h3 className="service-title">{service.title}</h3>
-              <p className="service-description">{service.description}</p>
-            </div>
+            <a
+              key={index}
+              href={service.link}
+              className={`service-card animate-on-scroll fade-in stagger-${index + 1}`}
+            >
+              <div className="service-card-inner">
+                <span className="service-icon">{service.icon}</span>
+                <h3 className="service-title">{service.title}</h3>
+                <p className="service-description">{service.description}</p>
+                <span className="service-link">
+                  פרטים נוספים
+                  <span className="arrow">‹</span>
+                </span>
+              </div>
+            </a>
           ))}
+        </div>
+
+        <div className="services-cta animate-on-scroll fade-in stagger-5">
+          <p className="cta-text">מעוניינים לשמוע עוד על הטיפולים שלנו?</p>
+          <a href="#contact" className="btn btn-primary">
+            צרו קשר
+          </a>
         </div>
       </div>
     </section>

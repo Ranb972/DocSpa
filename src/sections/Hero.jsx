@@ -1,6 +1,27 @@
+import { useEffect, useRef } from 'react';
 import './Hero.css';
 
 const Hero = () => {
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = heroRef.current?.querySelectorAll('.animate-on-scroll');
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
@@ -9,46 +30,49 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="hero">
-      <div className="hero-container">
+    <section id="hero" className="hero" ref={heroRef}>
+      <div className="hero-inner">
         <div className="hero-content">
-          <h1 className="hero-title">
-            חיוך בריא מתחיל כאן
-          </h1>
-          <p className="hero-subtitle">
-            מרפאת שיניים מתקדמת המציעה טיפולים מקצועיים
-            באווירה נעימה ומרגיעה. אנו מחויבים לבריאות הפה שלכם
-            ולחיוך מושלם.
+          <p className="hero-eyebrow animate-on-scroll fade-in">
+            מרפאה פרטית ברחובות
           </p>
-          <div className="hero-buttons">
-            <button className="btn btn-primary" onClick={scrollToContact}>
+          <h1 className="hero-title animate-on-scroll fade-in stagger-1">
+            ד״ר עמית מוריץ
+          </h1>
+          <p className="hero-subtitle animate-on-scroll fade-in stagger-2">
+            רופאת שיניים
+          </p>
+          <p className="hero-description animate-on-scroll fade-in stagger-3">
+            חווית טיפול מתקדמת ומותאמת אישית,
+            <br />
+            באווירה נעימה ומקצועית.
+          </p>
+          <div className="hero-actions animate-on-scroll fade-in stagger-4">
+            <button className="btn btn-primary btn-large" onClick={scrollToContact}>
               קביעת תור
             </button>
-            <a href="tel:03-1234567" className="btn btn-secondary">
-              03-1234567
+            <a href="#about" className="link-arrow">
+              למידע נוסף
             </a>
           </div>
-          <div className="hero-features">
-            <div className="hero-feature">
-              <span className="feature-icon">✓</span>
-              <span>ציוד מתקדם</span>
+        </div>
+
+        <div className="hero-visual animate-on-scroll scale-in stagger-2">
+          <div className="hero-image-container">
+            <div className="hero-image-placeholder">
+              <div className="placeholder-inner">
+                <span className="placeholder-icon">👩‍⚕️</span>
+                <span className="placeholder-text">תמונת הרופאה</span>
+              </div>
             </div>
-            <div className="hero-feature">
-              <span className="feature-icon">✓</span>
-              <span>צוות מקצועי</span>
-            </div>
-            <div className="hero-feature">
-              <span className="feature-icon">✓</span>
-              <span>אווירה נעימה</span>
-            </div>
+            <div className="hero-image-bg"></div>
           </div>
         </div>
-        <div className="hero-image">
-          <div className="image-placeholder">
-            <span className="placeholder-icon">👨‍⚕️</span>
-            <span className="placeholder-text">תמונת רופא שיניים</span>
-          </div>
-        </div>
+      </div>
+
+      <div className="hero-scroll-indicator animate-on-scroll fade-in stagger-5">
+        <span className="scroll-text">גלול למטה</span>
+        <div className="scroll-line"></div>
       </div>
     </section>
   );

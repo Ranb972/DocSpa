@@ -1,63 +1,82 @@
+import { useEffect, useRef } from 'react';
 import './Testimonials.css';
 
 const Testimonials = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const testimonials = [
     {
-      name: 'שרה כהן',
-      role: 'מטופלת קבועה',
-      text: 'מרפאה מקצועית ונעימה מאוד. הצוות אדיב ומסביר כל שלב בטיפול. ממליצה בחום!',
-      rating: 5,
+      name: 'שרה כ.',
+      text: 'ד״ר מוריץ מקצועית ונעימה מאוד. הצוות אדיב ומסביר כל שלב בטיפול. ממליצה בחום!',
+      initials: 'ש',
     },
     {
-      name: 'דוד לוי',
-      role: 'מטופל מזה 3 שנים',
-      text: 'לאחר חיפושים רבים מצאתי סוף סוף מרפאה שאני סומך עליה. טיפול מקצועי ותוצאות מעולות.',
-      rating: 5,
+      name: 'דוד ל.',
+      text: 'לאחר חיפושים רבים מצאתי סוף סוף מרפאה שאני סומך עליה. תוצאות מעולות.',
+      initials: 'ד',
     },
     {
-      name: 'מיכל אברהם',
-      role: 'מטופלת חדשה',
-      text: 'הגעתי עם פחד מרופאי שיניים ויצאתי עם חיוך. הצוות מבין ורגיש, ממליצה לכל מי שחושש.',
-      rating: 5,
-    },
-    {
-      name: 'יוסי ישראלי',
-      role: 'מטופל קבוע',
-      text: 'עשיתי השתלת שיניים והתוצאה מדהימה. הרופא מקצועי ביותר והמרפאה מצוידת בטכנולוגיה מתקדמת.',
-      rating: 5,
+      name: 'מיכל א.',
+      text: 'הגעתי עם פחד מרופאי שיניים ויצאתי עם חיוך. הצוות מבין ורגיש.',
+      initials: 'מ',
     },
   ];
 
-  const renderStars = (rating) => {
-    return '⭐'.repeat(rating);
-  };
-
   return (
-    <section id="testimonials" className="testimonials section">
+    <section id="testimonials" className="testimonials section section-light" ref={sectionRef}>
       <div className="container">
-        <div className="section-title">
-          <h2>מה המטופלים אומרים</h2>
-          <p>אלפי מטופלים מרוצים בחרו במרפאת DocSpa</p>
+        <div className="testimonials-header animate-on-scroll fade-in">
+          <p className="eyebrow text-primary">המלצות</p>
+          <h2 className="headline-medium">
+            מה אומרים המטופלים
+          </h2>
         </div>
 
         <div className="testimonials-grid">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="testimonial-card card">
-              <div className="testimonial-rating">
-                {renderStars(testimonial.rating)}
+            <div
+              key={index}
+              className={`testimonial-card animate-on-scroll fade-in stagger-${index + 1}`}
+            >
+              <div className="testimonial-content">
+                <div className="quote-mark">"</div>
+                <p className="testimonial-text">{testimonial.text}</p>
               </div>
-              <p className="testimonial-text">"{testimonial.text}"</p>
               <div className="testimonial-author">
                 <div className="author-avatar">
-                  {testimonial.name.charAt(0)}
+                  {testimonial.initials}
                 </div>
-                <div className="author-info">
-                  <span className="author-name">{testimonial.name}</span>
-                  <span className="author-role">{testimonial.role}</span>
-                </div>
+                <span className="author-name">{testimonial.name}</span>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="testimonials-rating animate-on-scroll fade-in stagger-4">
+          <div className="rating-stars">
+            ⭐⭐⭐⭐⭐
+          </div>
+          <p className="rating-text">
+            דירוג 5.0 מתוך 5 על בסיס ביקורות מטופלים
+          </p>
         </div>
       </div>
     </section>
