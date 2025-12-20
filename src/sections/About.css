@@ -1,0 +1,122 @@
+/* About Section Styles */
+.about {
+  background-color: var(--bg-white);
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-image-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 450px;
+  background: linear-gradient(135deg, var(--bg-section) 0%, var(--border-color) 100%);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 10px 40px var(--shadow-light);
+}
+
+.about-image-placeholder .placeholder-icon {
+  font-size: 4rem;
+}
+
+.about-image-placeholder .placeholder-text {
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+.about-title {
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.about-title h2::after {
+  right: 0;
+  transform: none;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-color);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .about-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-image-placeholder {
+    max-width: 350px;
+  }
+
+  .about-title {
+    text-align: center;
+  }
+
+  .about-title h2::after {
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+}

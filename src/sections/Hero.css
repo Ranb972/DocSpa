@@ -1,0 +1,154 @@
+/* Hero Section Styles */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
+  padding: 120px 20px 80px;
+}
+
+.hero-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-content {
+  padding-left: 20px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-features {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.hero-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+}
+
+.feature-icon {
+  color: var(--success-color);
+  font-weight: bold;
+}
+
+/* Hero Image */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-placeholder {
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, var(--bg-section) 0%, var(--border-color) 100%);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 20px 60px var(--shadow-medium);
+}
+
+.placeholder-icon {
+  font-size: 5rem;
+}
+
+.placeholder-text {
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-content {
+    padding-left: 0;
+    order: 1;
+  }
+
+  .hero-image {
+    order: 0;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-features {
+    justify-content: center;
+  }
+
+  .image-placeholder {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 100px 15px 60px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hero-features {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,57 @@
+/* Services Section Styles */
+.services {
+  background-color: var(--bg-section);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.service-card {
+  text-align: center;
+  padding: 35px 25px;
+}
+
+.service-icon {
+  display: inline-block;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.service-title {
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.service-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .service-card {
+    padding: 25px 20px;
+  }
+
+  .service-icon {
+    font-size: 2.5rem;
+  }
+}
