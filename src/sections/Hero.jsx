@@ -4,6 +4,10 @@ import './Hero.css';
 const Hero = () => {
   const heroRef = useRef(null);
   const [scrollY, setScrollY] = useState(0);
+  const [imageError, setImageError] = useState(false);
+
+  // Doctor image from public folder
+  const drMoritzImg = '/dr-moritz.jpg';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -122,12 +126,23 @@ const Hero = () => {
         >
           <div className="hero-image-container">
             <div className="hero-image-glow"></div>
-            <div className="hero-image-placeholder">
-              <div className="placeholder-inner">
-                <span className="placeholder-icon">👩‍⚕️</span>
-                <span className="placeholder-text">תמונת הרופאה</span>
+            {!imageError ? (
+              <div className="hero-image-frame">
+                <img
+                  src={drMoritzImg}
+                  alt="ד״ר עמית מוריץ - רופאת שיניים"
+                  className="hero-doctor-image"
+                  onError={() => setImageError(true)}
+                />
               </div>
-            </div>
+            ) : (
+              <div className="hero-image-placeholder">
+                <div className="placeholder-inner">
+                  <span className="placeholder-icon">👩‍⚕️</span>
+                  <span className="placeholder-text">ד״ר עמית מוריץ</span>
+                </div>
+              </div>
+            )}
             <div className="hero-image-ring hero-image-ring-1"></div>
             <div className="hero-image-ring hero-image-ring-2"></div>
 
