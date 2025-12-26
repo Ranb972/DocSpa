@@ -1,16 +1,11 @@
-import { useState, useEffect } from 'react';
 import Lottie from 'lottie-react';
 import './Clinic.css';
 import cleaningTeethAnimation from '../assets/Cleaning_Teeth.json';
 
-const Clinic = () => {
-  const [isVisible, setIsVisible] = useState(false);
+// DEBUG: Log to verify animation data loads
+console.log('Lottie animation data:', cleaningTeethAnimation);
 
-  useEffect(() => {
-    // Small delay for fade-in effect
-    const timer = setTimeout(() => setIsVisible(true), 500);
-    return () => clearTimeout(timer);
-  }, []);
+const Clinic = () => {
 
   const features = [
     {
@@ -51,16 +46,13 @@ const Clinic = () => {
             </div>
 
             {/* Playful Lottie Animation - floating between heading and cards */}
-            <div
-              className={`clinic-lottie-wrapper ${isVisible ? 'visible' : ''}`}
-              data-aos="zoom-in"
-              data-aos-delay="200"
-            >
+            <div className="clinic-lottie-wrapper">
               <Lottie
                 animationData={cleaningTeethAnimation}
                 loop={true}
                 autoplay={true}
                 className="clinic-lottie"
+                style={{ width: 140, height: 140 }}
               />
             </div>
 

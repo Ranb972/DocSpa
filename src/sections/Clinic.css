@@ -33,21 +33,23 @@
   justify-content: flex-start;
   margin-bottom: 32px;
   padding-right: 40px;
-  opacity: 0;
-  transform: rotate(-12deg) translateY(10px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.clinic-lottie-wrapper.visible {
+  /* Always visible for now - will animate later */
   opacity: 1;
-  transform: rotate(-12deg) translateY(0);
+  transform: rotate(-12deg);
   animation: floatBounce 3s ease-in-out infinite;
+  /* DEBUG: red border to see the container */
+  border: 3px solid red;
+  background: rgba(255, 200, 200, 0.3);
 }
 
 .clinic-lottie {
   width: 140px;
   height: 140px;
   filter: drop-shadow(0 8px 20px rgba(0, 119, 237, 0.15));
+  /* DEBUG: make sure it has a minimum size */
+  min-width: 140px;
+  min-height: 140px;
+  background: rgba(0, 113, 227, 0.1);
 }
 
 @keyframes floatBounce {
