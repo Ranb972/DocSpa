@@ -1,7 +1,16 @@
-/* Footer - Minimal Apple-Inspired Style */
+/* Footer - Award-Winning Minimal Design */
 .footer {
-  background-color: var(--color-gray-bg);
-  border-top: 1px solid var(--color-gray-lighter);
+  background: linear-gradient(180deg, #F8FAFC 0%, #EBF4FF 100%);
+  border-top: 1px solid rgba(15, 44, 89, 0.06);
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(62, 142, 250, 0.04) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .footer-inner {
@@ -26,9 +35,12 @@
 
 .brand-name {
   font-size: 17px;
-  font-weight: 600;
-  color: var(--color-black);
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
 }
 
 /* Footer Navigation */
@@ -44,15 +56,32 @@
   border: none;
   font-family: var(--font-primary);
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--color-gray);
   cursor: pointer;
-  padding: 0;
-  transition: color var(--transition-fast);
+  padding: 6px 0;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 .footer-link:hover {
-  color: var(--color-black);
+  color: var(--color-primary);
+}
+
+.footer-link:hover::after {
+  transform: scaleX(1);
 }
 
 /* Footer Divider */

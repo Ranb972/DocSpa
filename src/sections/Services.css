@@ -1,8 +1,19 @@
-/* Services Section - Premium Design */
+/* Services Section - Award-Winning Design */
 .services {
   overflow: hidden;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #F8FAFC 100%);
   position: relative;
+}
+
+/* Mesh gradient background */
+.services::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(62, 142, 250, 0.06) 0%, transparent 45%),
+    radial-gradient(ellipse at 20% 80%, rgba(255, 211, 105, 0.05) 0%, transparent 40%);
+  pointer-events: none;
 }
 
 /* Lottie Animation Decoration */
@@ -65,25 +76,30 @@
   margin-bottom: 64px;
 }
 
-/* Service Card - Premium Style */
+/* Service Card - Glassmorphism Style */
 .service-card {
-  background: var(--color-white);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-radius: 28px;
   text-decoration: none;
-  transition: all var(--transition-medium);
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 4px 6px -1px rgba(15, 44, 89, 0.1),
+    0 2px 4px -1px rgba(15, 44, 89, 0.06);
 }
 
 .service-card:hover {
-  background: var(--color-white);
+  background: rgba(255, 255, 255, 0.95);
   box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.1),
-    0 8px 24px rgba(0, 0, 0, 0.06);
+    0 20px 25px -5px rgba(15, 44, 89, 0.1),
+    0 10px 10px -5px rgba(15, 44, 89, 0.04),
+    0 0 0 1px rgba(62, 142, 250, 0.15);
   transform: translateY(-8px);
   text-decoration: none;
-  border-color: transparent;
+  border-color: rgba(62, 142, 250, 0.2);
 }
 
 .service-card-inner {
@@ -98,18 +114,33 @@
 .service-icon-wrapper {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, rgba(0, 119, 237, 0.1) 0%, rgba(0, 119, 237, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(62, 142, 250, 0.12) 0%, rgba(255, 211, 105, 0.08) 100%);
   border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 24px;
-  transition: all var(--transition-medium);
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+}
+
+/* Gold accent ring on hover */
+.service-icon-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 27px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
 }
 
 .service-card:hover .service-icon-wrapper {
-  background: linear-gradient(135deg, rgba(0, 119, 237, 0.15) 0%, rgba(0, 119, 237, 0.08) 100%);
-  transform: scale(1.05);
+  background: linear-gradient(135deg, rgba(62, 142, 250, 0.18) 0%, rgba(255, 211, 105, 0.12) 100%);
+  transform: scale(1.08) rotate(3deg);
+}
+
+.service-card:hover .service-icon-wrapper::after {
+  border-color: rgba(255, 211, 105, 0.4);
 }
 
 .service-icon {
@@ -172,20 +203,37 @@
 /* Services CTA */
 .services-cta {
   text-align: center;
-  padding: 56px 48px;
-  background: linear-gradient(135deg, rgba(0, 119, 237, 0.08) 0%, rgba(0, 119, 237, 0.03) 100%);
+  padding: 64px 56px;
+  background:
+    linear-gradient(135deg, rgba(62, 142, 250, 0.1) 0%, rgba(255, 211, 105, 0.05) 100%);
   border-radius: 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
-  border: 1px solid rgba(0, 119, 237, 0.1);
+  gap: 28px;
+  border: 1px solid rgba(62, 142, 250, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative gold accent */
+.services-cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 211, 105, 0.15) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
 }
 
 .cta-text {
-  font-size: 22px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 600;
   color: var(--color-black);
+  position: relative;
 }
 
 .btn-glow {
