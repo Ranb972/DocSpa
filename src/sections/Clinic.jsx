@@ -1,27 +1,6 @@
-import { useEffect, useRef } from 'react';
 import './Clinic.css';
 
 const Clinic = () => {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
-    elements?.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   const features = [
     {
       icon: '🔬',
@@ -41,25 +20,32 @@ const Clinic = () => {
   ];
 
   return (
-    <section id="clinic" className="clinic section section-gray" ref={sectionRef}>
+    <section id="clinic" className="clinic section section-gray">
       <div className="container">
         <div className="clinic-content">
-          <div className="clinic-text animate-on-scroll fade-in">
-            <p className="eyebrow text-primary">המרפאה</p>
-            <h2 className="headline-medium">
-              סביבה מתקדמת ומרגיעה
-            </h2>
-            <p className="clinic-description">
-              המרפאה ברחובות מצוידת בטכנולוגיות המתקדמות ביותר בתחום
-              רפואת השיניים. אנו משלבים ציוד חדשני עם אווירה נעימה
-              ומרגיעה, כדי להפוך את חווית הטיפול לנוחה ככל האפשר.
-            </p>
+          <div className="clinic-text">
+            <div data-aos="fade-up">
+              <span className="section-badge">
+                <span className="badge-icon">🏥</span>
+                <span className="badge-text">המרפאה</span>
+              </span>
+              <h2 className="headline-medium">
+                סביבה מתקדמת ומרגיעה
+              </h2>
+              <p className="clinic-description">
+                המרפאה ברחובות מצוידת בטכנולוגיות המתקדמות ביותר בתחום
+                רפואת השיניים. אנו משלבים ציוד חדשני עם אווירה נעימה
+                ומרגיעה, כדי להפוך את חווית הטיפול לנוחה ככל האפשר.
+              </p>
+            </div>
 
             <div className="clinic-features">
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className={`clinic-feature animate-on-scroll fade-in stagger-${index + 1}`}
+                  className="clinic-feature"
+                  data-aos="fade-up"
+                  data-aos-delay={100 + index * 100}
                 >
                   <span className="feature-icon">{feature.icon}</span>
                   <div className="feature-content">
@@ -71,7 +57,7 @@ const Clinic = () => {
             </div>
           </div>
 
-          <div className="clinic-visual animate-on-scroll scale-in stagger-2">
+          <div className="clinic-visual" data-aos="zoom-in" data-aos-delay="200">
             <div className="clinic-gallery">
               <div className="gallery-item gallery-main">
                 <div className="gallery-placeholder">
@@ -79,13 +65,13 @@ const Clinic = () => {
                   <span className="gallery-label">המרפאה מבפנים</span>
                 </div>
               </div>
-              <div className="gallery-item gallery-small">
+              <div className="gallery-item gallery-small" data-aos="fade-up" data-aos-delay="300">
                 <div className="gallery-placeholder">
                   <span className="gallery-icon">🪥</span>
                   <span className="gallery-label">חדר טיפולים</span>
                 </div>
               </div>
-              <div className="gallery-item gallery-small">
+              <div className="gallery-item gallery-small" data-aos="fade-up" data-aos-delay="400">
                 <div className="gallery-placeholder">
                   <span className="gallery-icon">🛋️</span>
                   <span className="gallery-label">אזור המתנה</span>

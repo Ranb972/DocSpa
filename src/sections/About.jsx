@@ -1,54 +1,39 @@
-import { useEffect, useRef } from 'react';
 import './About.css';
 
 const About = () => {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
-    elements?.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   const highlights = [
     {
       number: '15+',
       label: 'שנות ניסיון',
+      icon: '📅',
     },
     {
       number: '5,000+',
       label: 'מטופלים מרוצים',
+      icon: '😊',
     },
     {
       number: '100%',
       label: 'מחויבות לאיכות',
+      icon: '✨',
     },
   ];
 
   return (
-    <section id="about" className="about section section-gray" ref={sectionRef}>
+    <section id="about" className="about section section-gray">
       <div className="container">
-        <div className="about-header animate-on-scroll fade-in">
-          <p className="eyebrow text-primary">אודות</p>
+        <div className="about-header" data-aos="fade-up">
+          <span className="section-badge">
+            <span className="badge-icon">👩‍⚕️</span>
+            <span className="badge-text">אודות</span>
+          </span>
           <h2 className="headline-medium">
             גישה אישית לכל מטופל
           </h2>
         </div>
 
         <div className="about-grid">
-          <div className="about-content animate-on-scroll fade-in stagger-1">
+          <div className="about-content" data-aos="fade-up" data-aos-delay="100">
             <p className="about-lead">
               ד״ר עמית מוריץ היא רופאת שיניים מנוסה עם למעלה מ-15 שנות ניסיון
               ברפואת שיניים מתקדמת. המרפאה הפרטית ברחובות מציעה טיפולים
@@ -63,24 +48,33 @@ const About = () => {
               המרפאה מעוצבת ליצור אווירה רגועה ומרגיעה,
               כי אנחנו מבינים שחווית המטופל חשובה לא פחות מהטיפול עצמו.
             </p>
-            <a href="#services" className="link-arrow">
+            <a href="#services" className="btn btn-secondary">
               לטיפולים שלנו
             </a>
           </div>
 
-          <div className="about-visual animate-on-scroll scale-in stagger-2">
+          <div className="about-visual" data-aos="zoom-in" data-aos-delay="200">
             <div className="about-image-card">
+              <div className="image-glow"></div>
               <div className="image-placeholder-modern">
                 <span className="placeholder-emoji">👩‍⚕️</span>
                 <span className="placeholder-label">ד״ר עמית מוריץ</span>
               </div>
+              <div className="floating-element floating-element-1">🦷</div>
+              <div className="floating-element floating-element-2">✨</div>
             </div>
           </div>
         </div>
 
-        <div className="about-highlights animate-on-scroll fade-in stagger-3">
+        <div className="about-highlights">
           {highlights.map((item, index) => (
-            <div key={index} className="highlight-item">
+            <div
+              key={index}
+              className="highlight-item"
+              data-aos="fade-up"
+              data-aos-delay={300 + index * 100}
+            >
+              <span className="highlight-icon">{item.icon}</span>
               <span className="highlight-number">{item.number}</span>
               <span className="highlight-label">{item.label}</span>
             </div>

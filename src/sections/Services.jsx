@@ -1,27 +1,6 @@
-import { useEffect, useRef } from 'react';
 import './Services.css';
 
 const Services = () => {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
-    elements?.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   const services = [
     {
       icon: '✨',
@@ -50,10 +29,13 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="services section section-light" ref={sectionRef}>
+    <section id="services" className="services section section-light">
       <div className="container">
-        <div className="services-header animate-on-scroll fade-in">
-          <p className="eyebrow text-primary">טיפולים</p>
+        <div className="services-header" data-aos="fade-up">
+          <span className="section-badge">
+            <span className="badge-icon">🦷</span>
+            <span className="badge-text">טיפולים</span>
+          </span>
           <h2 className="headline-medium">
             מגוון טיפולים מתקדמים
           </h2>
@@ -67,10 +49,14 @@ const Services = () => {
             <a
               key={index}
               href={service.link}
-              className={`service-card animate-on-scroll fade-in stagger-${index + 1}`}
+              className="service-card"
+              data-aos="fade-up"
+              data-aos-delay={100 + index * 100}
             >
               <div className="service-card-inner">
-                <span className="service-icon">{service.icon}</span>
+                <div className="service-icon-wrapper">
+                  <span className="service-icon">{service.icon}</span>
+                </div>
                 <h3 className="service-title">{service.title}</h3>
                 <p className="service-description">{service.description}</p>
                 <span className="service-link">
@@ -82,10 +68,11 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="services-cta animate-on-scroll fade-in stagger-5">
+        <div className="services-cta" data-aos="fade-up" data-aos-delay="500">
           <p className="cta-text">מעוניינים לשמוע עוד על הטיפולים שלנו?</p>
-          <a href="#contact" className="btn btn-primary">
-            צרו קשר
+          <a href="#contact" className="btn btn-primary btn-glow">
+            <span className="btn-text">צרו קשר</span>
+            <span className="btn-icon">📞</span>
           </a>
         </div>
       </div>
