@@ -24,7 +24,59 @@
   font-size: 17px;
   color: var(--color-gray);
   line-height: 1.7;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
+}
+
+/* Playful Lottie Animation */
+.clinic-lottie-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 32px;
+  padding-right: 40px;
+  opacity: 0;
+  transform: rotate(-12deg) translateY(10px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.clinic-lottie-wrapper.visible {
+  opacity: 1;
+  transform: rotate(-12deg) translateY(0);
+  animation: floatBounce 3s ease-in-out infinite;
+}
+
+.clinic-lottie {
+  width: 140px;
+  height: 140px;
+  filter: drop-shadow(0 8px 20px rgba(0, 119, 237, 0.15));
+}
+
+@keyframes floatBounce {
+  0%, 100% {
+    transform: rotate(-12deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-12deg) translateY(-12px);
+  }
+}
+
+/* Responsive Lottie adjustments */
+@media (max-width: 834px) {
+  .clinic-lottie-wrapper {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .clinic-lottie {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clinic-lottie {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 /* Clinic Features */

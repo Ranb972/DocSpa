@@ -1,6 +1,17 @@
+import { useState, useEffect } from 'react';
+import Lottie from 'lottie-react';
 import './Clinic.css';
+import cleaningTeethAnimation from '../assets/Cleaning_Teeth.json';
 
 const Clinic = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Small delay for fade-in effect
+    const timer = setTimeout(() => setIsVisible(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   const features = [
     {
       icon: '🔬',
@@ -37,6 +48,20 @@ const Clinic = () => {
                 רפואת השיניים. אנו משלבים ציוד חדשני עם אווירה נעימה
                 ומרגיעה, כדי להפוך את חווית הטיפול לנוחה ככל האפשר.
               </p>
+            </div>
+
+            {/* Playful Lottie Animation - floating between heading and cards */}
+            <div
+              className={`clinic-lottie-wrapper ${isVisible ? 'visible' : ''}`}
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <Lottie
+                animationData={cleaningTeethAnimation}
+                loop={true}
+                autoplay={true}
+                className="clinic-lottie"
+              />
             </div>
 
             <div className="clinic-features">

@@ -1,17 +1,6 @@
-import { useState, useEffect } from 'react';
-import Lottie from 'lottie-react';
 import './Services.css';
 
 const Services = () => {
-  const [animationData, setAnimationData] = useState(null);
-
-  // Dynamically load the Lottie animation
-  useEffect(() => {
-    import('../assets/Cleaning_Teeth.json')
-      .then((data) => setAnimationData(data.default || data))
-      .catch(() => setAnimationData(null));
-  }, []);
-
   const services = [
     {
       icon: '✨',
@@ -41,22 +30,6 @@ const Services = () => {
 
   return (
     <section id="services" className="services section section-light">
-      {/* Decorative Lottie Animation - floating on the side */}
-      {animationData && (
-        <div
-          className="services-lottie-decoration"
-          data-aos="fade-in"
-          data-aos-delay="300"
-        >
-          <Lottie
-            animationData={animationData}
-            loop={true}
-            autoplay={true}
-            className="lottie-animation"
-          />
-        </div>
-      )}
-
       <div className="container">
         <div className="services-header" data-aos="fade-up">
           <span className="section-badge">
