@@ -85,6 +85,31 @@ npm run lint     # Run ESLint
 - Phone placeholder: 08-1234567
 - Use emoji placeholders for images (will be replaced later)
 
+## Git Workflow Rules
+
+- **Commit immediately** after every code change - do not batch multiple changes
+- **Use clear, descriptive commit messages** in English
+- **Format**: `type: description`
+
+### Commit Types
+| Type | Usage |
+|------|-------|
+| `feat` | New feature (e.g., `feat: add contact form`) |
+| `fix` | Bug fix (e.g., `fix: header alignment on mobile`) |
+| `style` | CSS/styling changes (e.g., `style: adjust card shadows`) |
+| `refactor` | Code restructuring (e.g., `refactor: extract animation hook`) |
+| `docs` | Documentation (e.g., `docs: update CLAUDE.md`) |
+| `chore` | Maintenance (e.g., `chore: update dependencies`) |
+
+### Examples
+```
+feat: add WhatsApp contact button
+fix: testimonials grid on tablet view
+style: increase hero section padding
+refactor: consolidate scroll animation logic
+docs: add deployment instructions
+```
+
 ## Files Not to Modify Without Reason
 
 | File | Reason |
