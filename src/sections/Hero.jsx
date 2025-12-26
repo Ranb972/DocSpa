@@ -6,9 +6,8 @@ const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
   const [imageError, setImageError] = useState(false);
 
-  // Doctor images from public folder
-  const drMoritzImg1 = '/dr-moritz-2.jpg';
-  const drMoritzImg2 = '/dr-moritz-3.jpg';
+  // Doctor image from public folder
+  const drMoritzImg = '/dr-moritz.jpg';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -127,24 +126,25 @@ const Hero = () => {
         >
           <div className="hero-image-container">
             <div className="hero-image-glow"></div>
-
-            {/* Stacked photo cards */}
-            <div className="hero-stacked-photos">
-              <div className="stacked-photo stacked-photo-back">
+            {!imageError ? (
+              <div className="hero-image-frame">
                 <img
-                  src={drMoritzImg1}
-                  alt="ד״ר עמית מוריץ"
-                  onError={(e) => e.target.style.display = 'none'}
+                  src={drMoritzImg}
+                  alt="ד״ר עמית מוריץ - רופאת שיניים"
+                  className="hero-doctor-image"
+                  onError={() => setImageError(true)}
                 />
               </div>
-              <div className="stacked-photo stacked-photo-front">
-                <img
-                  src={drMoritzImg2}
-                  alt="ד״ר עמית מוריץ"
-                  onError={(e) => e.target.style.display = 'none'}
-                />
+            ) : (
+              <div className="hero-image-placeholder">
+                <div className="placeholder-inner">
+                  <span className="placeholder-icon">👩‍⚕️</span>
+                  <span className="placeholder-text">ד״ר עמית מוריץ</span>
+                </div>
               </div>
-            </div>
+            )}
+            <div className="hero-image-ring hero-image-ring-1"></div>
+            <div className="hero-image-ring hero-image-ring-2"></div>
 
             {/* Floating dental icons */}
             <div className="floating-icon floating-icon-1">🦷</div>

@@ -54,14 +54,21 @@ const About = () => {
           </div>
 
           <div className="about-visual" data-aos="zoom-in" data-aos-delay="200">
-            <div className="about-image-card">
-              <div className="image-glow"></div>
-              <div className="image-placeholder-modern">
-                <span className="placeholder-emoji">👩‍⚕️</span>
-                <span className="placeholder-label">ד״ר עמית מוריץ</span>
+            <div className="about-stacked-photos">
+              <div className="stacked-card stacked-card-back">
+                <img
+                  src="/dr-moritz-2.jpg"
+                  alt="ד״ר עמית מוריץ"
+                  onError={(e) => e.target.parentElement.style.display = 'none'}
+                />
               </div>
-              <div className="floating-element floating-element-1">🦷</div>
-              <div className="floating-element floating-element-2">✨</div>
+              <div className="stacked-card stacked-card-front">
+                <img
+                  src="/dr-moritz-3.jpg"
+                  alt="ד״ר עמית מוריץ"
+                  onError={(e) => e.target.parentElement.style.display = 'none'}
+                />
+              </div>
             </div>
           </div>
         </div>

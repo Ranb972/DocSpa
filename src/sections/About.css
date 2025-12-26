@@ -53,6 +53,60 @@
   justify-content: center;
 }
 
+/* Stacked Photo Cards */
+.about-stacked-photos {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  height: 420px;
+}
+
+.stacked-card {
+  position: absolute;
+  width: 280px;
+  height: 350px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.15),
+    0 8px 24px rgba(0, 0, 0, 0.1);
+  border: 4px solid rgba(255, 255, 255, 0.95);
+  background: linear-gradient(180deg, #f8fafc 0%, #e8ecf0 100%);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.stacked-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.stacked-card-back {
+  top: 30px;
+  left: 50%;
+  transform: translateX(-70%) rotate(-10deg);
+  z-index: 1;
+}
+
+.stacked-card-front {
+  top: 0;
+  left: 50%;
+  transform: translateX(-30%) rotate(10deg);
+  z-index: 2;
+}
+
+/* Hover swap animation */
+.about-stacked-photos:hover .stacked-card-back {
+  transform: translateX(-30%) rotate(8deg);
+  z-index: 3;
+}
+
+.about-stacked-photos:hover .stacked-card-front {
+  transform: translateX(-70%) rotate(-8deg);
+  z-index: 1;
+}
+
 .about-image-card {
   position: relative;
   width: 100%;
@@ -232,6 +286,32 @@
     max-width: 300px;
   }
 
+  .about-stacked-photos {
+    max-width: 320px;
+    height: 360px;
+  }
+
+  .stacked-card {
+    width: 230px;
+    height: 290px;
+  }
+
+  .stacked-card-back {
+    transform: translateX(-65%) rotate(-8deg);
+  }
+
+  .stacked-card-front {
+    transform: translateX(-35%) rotate(8deg);
+  }
+
+  .about-stacked-photos:hover .stacked-card-back {
+    transform: translateX(-35%) rotate(6deg);
+  }
+
+  .about-stacked-photos:hover .stacked-card-front {
+    transform: translateX(-65%) rotate(-6deg);
+  }
+
   .about-highlights {
     gap: 16px;
     padding: 40px 0;
@@ -257,6 +337,26 @@
 
   .about-image-card {
     max-width: 260px;
+  }
+
+  .about-stacked-photos {
+    max-width: 280px;
+    height: 300px;
+  }
+
+  .stacked-card {
+    width: 180px;
+    height: 230px;
+    border-radius: 16px;
+    border-width: 3px;
+  }
+
+  .stacked-card-back {
+    transform: translateX(-60%) rotate(-8deg);
+  }
+
+  .stacked-card-front {
+    transform: translateX(-40%) rotate(8deg);
   }
 
   .placeholder-emoji {
