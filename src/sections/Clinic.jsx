@@ -28,18 +28,12 @@ const Clinic = () => {
         <div className="clinic-content">
           {/* Floating Lottie Animation - positioned between gallery and heading */}
           <div className="clinic-lottie-wrapper" data-aos="zoom-in" data-aos-delay="300">
-            <div style={{
-              width: 110,
-              height: 110,
-              background: '#0071e3',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '40px'
-            }}>
-              🦷
-            </div>
+            <Lottie
+              animationData={cleaningTeethAnimation}
+              loop={true}
+              autoplay={true}
+              style={{ width: 110, height: 110 }}
+            />
           </div>
 
           <div className="clinic-text">
