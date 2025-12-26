@@ -2,9 +2,6 @@ import Lottie from 'lottie-react';
 import './Clinic.css';
 import cleaningTeethAnimation from '../assets/Cleaning_Teeth.json';
 
-// DEBUG: Log to verify animation data loads
-console.log('Lottie animation data:', cleaningTeethAnimation);
-
 const Clinic = () => {
 
   const features = [
@@ -29,6 +26,16 @@ const Clinic = () => {
     <section id="clinic" className="clinic section section-gray">
       <div className="container">
         <div className="clinic-content">
+          {/* Floating Lottie Animation - positioned between gallery and heading */}
+          <div className="clinic-lottie-wrapper" data-aos="zoom-in" data-aos-delay="300">
+            <Lottie
+              animationData={cleaningTeethAnimation}
+              loop={true}
+              autoplay={true}
+              className="clinic-lottie"
+            />
+          </div>
+
           <div className="clinic-text">
             <div data-aos="fade-up">
               <span className="section-badge">
@@ -43,17 +50,6 @@ const Clinic = () => {
                 רפואת השיניים. אנו משלבים ציוד חדשני עם אווירה נעימה
                 ומרגיעה, כדי להפוך את חווית הטיפול לנוחה ככל האפשר.
               </p>
-            </div>
-
-            {/* Playful Lottie Animation - floating between heading and cards */}
-            <div className="clinic-lottie-wrapper">
-              <Lottie
-                animationData={cleaningTeethAnimation}
-                loop={true}
-                autoplay={true}
-                className="clinic-lottie"
-                style={{ width: 140, height: 140 }}
-              />
             </div>
 
             <div className="clinic-features">
