@@ -3,19 +3,19 @@ import './About.css';
 const About = () => {
   const highlights = [
     {
-      number: '15+',
-      label: 'שנות ניסיון',
-      icon: '📅',
+      text: 'שביעות רצון',
+      subtext: '100%',
+      icon: '💯',
     },
     {
-      number: '5,000+',
-      label: 'מטופלים מרוצים',
-      icon: '😊',
+      text: 'מצוינות',
+      subtext: 'ברמה הגבוהה ביותר',
+      icon: '⭐',
     },
     {
-      number: '100%',
-      label: 'מחויבות לאיכות',
-      icon: '✨',
+      text: 'איכפתיות',
+      subtext: 'תשומת לב מהלב',
+      icon: '💙',
     },
   ];
 
@@ -35,18 +35,18 @@ const About = () => {
         <div className="about-grid">
           <div className="about-content" data-aos="fade-up" data-aos-delay="100">
             <p className="about-lead">
-              ד״ר עמית מוריץ היא רופאת שיניים מנוסה עם למעלה מ-15 שנות ניסיון
-              ברפואת שיניים מתקדמת. המרפאה הפרטית ברחובות מציעה טיפולים
-              באיכות הגבוהה ביותר.
+              ד״ר עמית מוריץ מנהלת מרפאת שיניים פרטית ברחובות,
+              המתמחה במתן טיפולי שיניים באיכות הגבוהה ביותר
+              עם דגש על יחס אישי וחם לכל מטופל.
             </p>
             <p className="about-text">
-              הגישה שלנו מבוססת על הקשבה לצרכים הייחודיים של כל מטופל,
-              תוך שימוש בטכנולוגיות המתקדמות ביותר בתחום. אנו מאמינים
-              שטיפול שיניים איכותי צריך להיות נגיש ונעים.
+              במרפאה שלנו כל מטופל מקבל תשומת לב מלאה והקשבה אמיתית
+              לצרכים הייחודיים שלו. אנו מאמינים שטיפול שיניים איכותי
+              מתחיל ביחס אנושי ובאווירה נעימה.
             </p>
             <p className="about-text">
-              המרפאה מעוצבת ליצור אווירה רגועה ומרגיעה,
-              כי אנחנו מבינים שחווית המטופל חשובה לא פחות מהטיפול עצמו.
+              המרפאה מצוידת בציוד מתקדם ומציעה מגוון רחב של טיפולים -
+              משמירה על בריאות הפה ועד לטיפולים אסתטיים ושיקומיים.
             </p>
             <a href="#services" className="btn btn-secondary">
               לטיפולים שלנו
@@ -77,13 +77,13 @@ const About = () => {
           {highlights.map((item, index) => (
             <div
               key={index}
-              className="highlight-item"
+              className="highlight-item highlight-badge-item"
               data-aos="fade-up"
               data-aos-delay={300 + index * 100}
             >
               <span className="highlight-icon">{item.icon}</span>
-              <span className="highlight-number">{item.number}</span>
-              <span className="highlight-label">{item.label}</span>
+              <span className="highlight-text">{item.text}</span>
+              <span className="highlight-subtext">{item.subtext}</span>
             </div>
           ))}
         </div>

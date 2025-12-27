@@ -251,10 +251,27 @@
   letter-spacing: -0.02em;
 }
 
+.stat-icon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 6px;
+}
+
 .stat-label {
   font-size: 13px;
   font-weight: 500;
   color: var(--color-gray);
+}
+
+/* Highlight badge style */
+.highlight-badge {
+  text-align: center;
+}
+
+.highlight-badge .stat-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary-dark);
 }
 
 .stat-divider {

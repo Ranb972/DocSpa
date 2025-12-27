@@ -77,9 +77,9 @@ const Hero = () => {
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            חווית טיפול מתקדמת ומותאמת אישית,
+            טיפול שיניים ברמה הגבוהה ביותר,
             <br />
-            באווירה נעימה ומקצועית.
+            עם תשומת לב אישית לכל מטופל.
           </p>
 
           <div
@@ -87,33 +87,33 @@ const Hero = () => {
             data-aos="fade-up"
             data-aos-delay="400"
           >
-            <button className="btn btn-primary btn-large btn-glow" onClick={scrollToContact}>
-              <span className="btn-text">קביעת תור</span>
-              <span className="btn-icon">📅</span>
-            </button>
+            <a href="tel:+972505908582" className="btn btn-primary btn-large btn-glow">
+              <span className="btn-text">התקשרו עכשיו</span>
+              <span className="btn-icon">📞</span>
+            </a>
             <a href="#about" className="btn btn-secondary btn-large">
               למידע נוסף
             </a>
           </div>
 
           <div
-            className="hero-stats"
+            className="hero-stats hero-highlights"
             data-aos="fade-up"
             data-aos-delay="500"
           >
-            <div className="stat-item">
-              <span className="stat-number">15+</span>
-              <span className="stat-label">שנות ניסיון</span>
-            </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item">
-              <span className="stat-number">5000+</span>
-              <span className="stat-label">מטופלים מרוצים</span>
-            </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item">
-              <span className="stat-number">100%</span>
+            <div className="stat-item highlight-badge">
+              <span className="stat-icon">💯</span>
               <span className="stat-label">שביעות רצון</span>
+            </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item highlight-badge">
+              <span className="stat-icon">⭐</span>
+              <span className="stat-label">מצוינות ברמה הגבוהה</span>
+            </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item highlight-badge">
+              <span className="stat-icon">💙</span>
+              <span className="stat-label">איכפתיות מהלב</span>
             </div>
           </div>
         </div>

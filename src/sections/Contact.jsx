@@ -2,9 +2,9 @@ import './Contact.css';
 
 const Contact = () => {
   const workingHours = [
-    { day: 'ראשון - חמישי', hours: '08:00 - 20:00' },
-    { day: 'שישי', hours: '08:00 - 14:00' },
-    { day: 'שבת', hours: 'סגור' },
+    { day: 'יום ראשון', hours: '12:30 - 18:30' },
+    { day: 'יום שלישי', hours: '08:00 - 16:00' },
+    { day: 'יום רביעי', hours: '12:00 - 19:00' },
   ];
 
   return (
@@ -30,7 +30,7 @@ const Contact = () => {
               <span className="contact-icon">📍</span>
               <div className="contact-content">
                 <h4>כתובת</h4>
-                <p>רחוב הרצל 50<br />רחובות, ישראל</p>
+                <p>הבנים 21, קומת קרקע מצד שמאל<br />רחובות</p>
               </div>
             </div>
 
@@ -38,19 +38,19 @@ const Contact = () => {
               <span className="contact-icon">📞</span>
               <div className="contact-content">
                 <h4>טלפון</h4>
-                <a href="tel:08-1234567">08-1234567</a>
+                <a href="tel:+972505908582">050-590-8582</a>
               </div>
             </div>
 
             <div className="contact-item">
-              <span className="contact-icon">📧</span>
+              <span className="contact-icon">👩‍⚕️</span>
               <div className="contact-content">
-                <h4>דוא״ל</h4>
-                <a href="mailto:info@docspa.co.il">info@docspa.co.il</a>
+                <h4>ד״ר עמית מוריץ</h4>
+                <p>רופאת שיניים</p>
               </div>
             </div>
 
-            <a href="tel:08-1234567" className="btn btn-primary btn-glow contact-cta">
+            <a href="tel:+972505908582" className="btn btn-primary btn-glow contact-cta">
               <span className="btn-text">התקשרו עכשיו</span>
               <span className="btn-icon">📞</span>
             </a>
@@ -80,7 +80,7 @@ const Contact = () => {
                 <div className="map-pulse"></div>
               </div>
               <span className="map-label">מפת המרפאה</span>
-              <span className="map-address">רחוב הרצל 50, רחובות</span>
+              <span className="map-address">הבנים 21, רחובות</span>
             </div>
           </div>
         </div>

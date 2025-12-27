@@ -24,7 +24,7 @@ const Footer = () => {
       <div className="footer-inner">
         <div className="footer-top">
           <div className="footer-brand" onClick={() => scrollToSection('hero')}>
-            <span className="brand-name">DocSpa</span>
+            <span className="brand-name">ד״ר עמית מוריץ</span>
           </div>
 
           <nav className="footer-nav">
@@ -44,10 +44,10 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © {currentYear} DocSpa. כל הזכויות שמורות.
+            © {currentYear} ד״ר עמית מוריץ. כל הזכויות שמורות.
           </p>
           <p className="footer-location">
-            מרפאה פרטית ברחובות | ד״ר עמית מוריץ
+            הבנים 21, רחובות | 050-590-8582
           </p>
         </div>
       </div>
