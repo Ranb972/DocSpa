@@ -35,7 +35,7 @@ const About = () => {
         <div className="about-grid">
           <div className="about-content" data-aos="fade-up" data-aos-delay="100">
             <p className="about-lead">
-              ד״ר עמית מוריץ מנהלת מרפאת שיניים פרטית ברחובות,
+              ד"ר עמית מוריץ רופאת שיניים בכירה וסגנית מנהל מרפאת השיניים ברחובות,
               המתמחה במתן טיפולי שיניים באיכות הגבוהה ביותר
               עם דגש על יחס אישי וחם לכל מטופל.
             </p>
