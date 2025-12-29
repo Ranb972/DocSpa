@@ -675,7 +675,7 @@
     justify-content: center;
   }
 
-  /* Stack stats vertically on mobile - centered with natural text flow */
+  /* Stack stats vertically on mobile - centered with natural RTL text flow */
   .hero-stats {
     flex-direction: column;
     gap: 12px;
@@ -688,29 +688,30 @@
   }
 
   .stat-item.highlight-badge {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 12px;
     padding: 16px 20px;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 16px;
     border: 1px solid rgba(226, 232, 240, 0.8);
-    text-align: center;
+    text-align: right;
     width: 100%;
+    direction: rtl;
   }
 
   .stat-item.highlight-badge .stat-icon {
     font-size: 28px;
     margin-bottom: 0;
+    flex-shrink: 0;
   }
 
   .stat-item.highlight-badge .stat-label {
     font-size: 15px;
-    text-align: center;
-    line-height: 1.5;
-    white-space: normal;
-    word-wrap: break-word;
+    text-align: right;
+    line-height: 1.4;
+    direction: rtl;
   }
 
   .stat-number {
