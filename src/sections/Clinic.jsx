@@ -1,19 +1,17 @@
-import Lottie from 'lottie-react';
 import './Clinic.css';
-import cleaningTeethAnimation from '../assets/Cleaning_Teeth.json';
 
 const Clinic = () => {
 
   const features = [
     {
-      icon: '🔬',
-      title: 'ציוד מתקדם',
-      description: 'טכנולוגיה חדשנית לאבחון וטיפול מדויק',
+      icon: '🎓',
+      title: 'ידע וניסיון',
+      description: 'מקצועיות והכשרה מקיפה לטיפול מיטבי',
     },
     {
       icon: '🛋️',
-      title: 'אווירה נעימה',
-      description: 'עיצוב מודרני ומרגיע לחוויה נוחה',
+      title: 'אווירה טובה',
+      description: 'סביבה נעימה ומרגיעה לחוויה נוחה',
     },
     {
       icon: '🧼',
@@ -26,16 +24,6 @@ const Clinic = () => {
     <section id="clinic" className="clinic section section-gray">
       <div className="container">
         <div className="clinic-content">
-          {/* Floating Lottie Animation - positioned between gallery and heading */}
-          <div className="clinic-lottie-wrapper" data-aos="zoom-in" data-aos-delay="300">
-            <Lottie
-              animationData={cleaningTeethAnimation}
-              loop={true}
-              autoplay={true}
-              style={{ width: 110, height: 110 }}
-            />
-          </div>
-
           <div className="clinic-text">
             <div data-aos="fade-up">
               <span className="section-badge">
@@ -46,9 +34,8 @@ const Clinic = () => {
                 סביבה מתקדמת ומרגיעה
               </h2>
               <p className="clinic-description">
-                המרפאה ברחובות מצוידת בטכנולוגיות המתקדמות ביותר בתחום
-                רפואת השיניים. אנו משלבים ציוד חדשני עם אווירה נעימה
-                ומרגיעה, כדי להפוך את חווית הטיפול לנוחה ככל האפשר.
+                המרפאה ברחובות מציעה טיפולי שיניים מקצועיים באווירה נעימה ומשפחתית.
+                אנו שמים דגש על יחס אישי וחם לכל מטופל.
               </p>
             </div>
 
