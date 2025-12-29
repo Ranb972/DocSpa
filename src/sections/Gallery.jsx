@@ -108,20 +108,20 @@ const Gallery = () => {
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
-          {/* Navigation Arrows - RTL: next on right, prev on left */}
+          {/* Navigation Arrows - RTL: next on left, prev on right */}
           <button
             className="gallery-arrow gallery-arrow-next"
             onClick={nextSlide}
             aria-label="התמונה הבאה"
           >
-            ‹
+            ›
           </button>
           <button
             className="gallery-arrow gallery-arrow-prev"
             onClick={prevSlide}
             aria-label="התמונה הקודמת"
           >
-            ›
+            ‹
           </button>
 
           {/* Slides Container */}
