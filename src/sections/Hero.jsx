@@ -96,21 +96,19 @@ const Hero = () => {
             </a>
           </div>
 
-          <div
-            className="hero-highlights-row"
-            data-aos="fade-up"
-            data-aos-delay="500"
-          >
-            {[
-              { emoji: '😊', text: 'עשרות לקוחות מרוצים' },
-              { emoji: '⭐', text: 'מקצועיות ברמה גבוהה' },
-              { emoji: '💙', text: 'רואים את הבן אדם לפני השיניים' },
-            ].map((item, index) => (
-              <div key={index} className="highlight-card">
-                <span className="highlight-emoji">{item.emoji}</span>
-                <span className="highlight-text">{item.text}</span>
-              </div>
-            ))}
+          <div className="stats-container" data-aos="fade-up" data-aos-delay="500">
+            <div className="stat-card">
+              <span className="stat-emoji">😊</span>
+              <span className="stat-text">עשרות לקוחות מרוצים</span>
+            </div>
+            <div className="stat-card">
+              <span className="stat-emoji">⭐</span>
+              <span className="stat-text">מקצועיות ברמה גבוהה</span>
+            </div>
+            <div className="stat-card">
+              <span className="stat-emoji">💙</span>
+              <span className="stat-text">גישה אנושית - רואים את הבן אדם לפני השיניים</span>
+            </div>
           </div>
         </div>
 
