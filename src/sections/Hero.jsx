@@ -102,18 +102,18 @@ const Hero = () => {
             data-aos-delay="500"
           >
             <div className="stat-item highlight-badge">
-              <span className="stat-icon">💯</span>
-              <span className="stat-label">שביעות רצון</span>
+              <span className="stat-icon">😊</span>
+              <span className="stat-label">עשרות לקוחות מרוצים</span>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item highlight-badge">
               <span className="stat-icon">⭐</span>
-              <span className="stat-label">מצוינות ברמה הגבוהה</span>
+              <span className="stat-label">מקצועיות ברמה גבוהה</span>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item highlight-badge">
               <span className="stat-icon">💙</span>
-              <span className="stat-label">איכפתיות מהלב</span>
+              <span className="stat-label">רואים את הבן אדם לפני השיניים</span>
             </div>
           </div>
         </div>
@@ -132,6 +132,8 @@ const Hero = () => {
                   src={drMoritzImg}
                   alt="ד״ר עמית מוריץ - רופאת שיניים"
                   className="hero-doctor-image"
+                  loading="eager"
+                  decoding="async"
                   onError={() => setImageError(true)}
                 />
               </div>

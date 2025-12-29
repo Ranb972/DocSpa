@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Hero from './sections/Hero';
 import About from './sections/About';
+import Gallery from './sections/Gallery';
 import Services from './sections/Services';
 import Clinic from './sections/Clinic';
 import Testimonials from './sections/Testimonials';
@@ -28,6 +29,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Gallery />
         <Services />
         <Clinic />
         <Testimonials />

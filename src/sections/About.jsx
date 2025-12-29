@@ -3,18 +3,18 @@ import './About.css';
 const About = () => {
   const highlights = [
     {
-      text: 'שביעות רצון',
-      subtext: '100%',
-      icon: '💯',
+      text: 'לקוחות מרוצים',
+      subtext: 'עשרות',
+      icon: '😊',
     },
     {
-      text: 'מצוינות',
-      subtext: 'ברמה הגבוהה ביותר',
+      text: 'מקצועיות',
+      subtext: 'ברמה גבוהה',
       icon: '⭐',
     },
     {
-      text: 'איכפתיות',
-      subtext: 'תשומת לב מהלב',
+      text: 'גישה אנושית',
+      subtext: 'רואים את הבן אדם לפני השיניים',
       icon: '💙',
     },
   ];
@@ -35,9 +35,8 @@ const About = () => {
         <div className="about-grid">
           <div className="about-content" data-aos="fade-up" data-aos-delay="100">
             <p className="about-lead">
-              ד"ר עמית מוריץ רופאת שיניים בכירה וסגנית מנהל מרפאת השיניים ברחובות,
-              המתמחה במתן טיפולי שיניים באיכות הגבוהה ביותר
-              עם דגש על יחס אישי וחם לכל מטופל.
+              ד"ר עמית מוריץ, רופאת שיניים בוגרת אוניברסיטת קלוז׳ נפוקה ברומניה (שנתון 2022),
+              מנהלת לצד אביה ד"ר קובי מוריץ את מרפאת השיניים שלהם ברחובות.
             </p>
             <p className="about-text">
               במרפאה שלנו כל מטופל מקבל תשומת לב מלאה והקשבה אמיתית
@@ -45,7 +44,7 @@ const About = () => {
               מתחיל ביחס אנושי ובאווירה נעימה.
             </p>
             <p className="about-text">
-              המרפאה מצוידת בציוד מתקדם ומציעה מגוון רחב של טיפולים -
+              המרפאה מציעה מגוון רחב של טיפולים -
               משמירה על בריאות הפה ועד לטיפולים אסתטיים ושיקומיים.
             </p>
             <a href="#services" className="btn btn-secondary">
@@ -59,6 +58,8 @@ const About = () => {
                 <img
                   src="/dr-moritz-2.jpg"
                   alt="ד״ר עמית מוריץ"
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => e.target.parentElement.style.display = 'none'}
                 />
               </div>
@@ -66,6 +67,8 @@ const About = () => {
                 <img
                   src="/dr-moritz-3.jpg"
                   alt="ד״ר עמית מוריץ"
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => e.target.parentElement.style.display = 'none'}
                 />
               </div>

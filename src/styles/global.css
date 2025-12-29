@@ -99,6 +99,7 @@ html {
   scroll-behavior: smooth;
   direction: rtl;
   font-size: 16px;
+  color-scheme: light only;
 }
 
 body {
@@ -713,14 +714,52 @@ a:hover {
     font-size: 17px;
   }
 
+  /* Mobile buttons - 44px minimum touch target */
   .btn {
     padding: 16px 28px;
+    min-height: 48px;
     width: 100%;
     max-width: 320px;
   }
 
   .btn-large {
     padding: 18px 32px;
+    min-height: 56px;
+  }
+}
+
+/* Mobile 480px - Enhanced touch targets and spacing */
+@media (max-width: 480px) {
+  /* All interactive elements 44px+ touch targets */
+  .btn {
+    min-height: 52px;
+    padding: 16px 24px;
+    font-size: 16px;
+  }
+
+  .btn-large {
+    min-height: 56px;
+    padding: 18px 28px;
+    font-size: 17px;
+  }
+
+  /* Better section spacing on small screens */
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  /* Improved container padding for breathing room */
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Card spacing improvements */
+  .card-content {
+    padding: 24px;
   }
 }
 

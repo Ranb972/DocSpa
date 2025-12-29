@@ -136,20 +136,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  position: relative;
-}
-
-/* Gold underline accent on title */
-.title-accent::after {
-  content: '';
-  position: absolute;
-  bottom: 8px;
-  right: 0;
-  width: 100%;
-  height: 6px;
-  background: linear-gradient(90deg, var(--color-accent), rgba(255, 211, 105, 0.3));
-  border-radius: 3px;
-  z-index: -1;
 }
 
 .hero-subtitle {
@@ -254,7 +240,7 @@
 .stat-icon {
   font-size: 28px;
   display: block;
-  margin-bottom: 6px;
+  flex-shrink: 0;
 }
 
 .stat-label {
@@ -263,15 +249,23 @@
   color: var(--color-gray);
 }
 
-/* Highlight badge style */
-.highlight-badge {
-  text-align: center;
+/* Highlight badge style - horizontal layout with RTL */
+.stat-item.highlight-badge {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  direction: rtl;
 }
 
-.highlight-badge .stat-label {
+.stat-item.highlight-badge .stat-icon {
+  margin-bottom: 0;
+}
+
+.stat-item.highlight-badge .stat-label {
   font-size: 14px;
   font-weight: 600;
   color: var(--color-primary-dark);
+  text-align: right;
 }
 
 .stat-divider {
@@ -638,12 +632,22 @@
     padding: 100px 20px 60px;
   }
 
+  /* Better mobile name styling */
+  .hero-title {
+    gap: 0;
+  }
+
   .title-line {
-    font-size: 36px;
+    font-size: 42px;
+    line-height: 1.15;
+  }
+
+  .title-line.title-accent {
+    font-size: 48px;
   }
 
   .subtitle-text {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .hero-description {
@@ -665,13 +669,43 @@
     justify-content: center;
   }
 
+  /* Stack stats vertically on mobile - centered with natural RTL text flow */
   .hero-stats {
-    flex-wrap: wrap;
-    gap: 16px;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 0;
+    align-items: stretch;
   }
 
   .stat-divider {
     display: none;
+  }
+
+  .stat-item.highlight-badge {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    text-align: right;
+    width: 100%;
+    direction: rtl;
+  }
+
+  .stat-item.highlight-badge .stat-icon {
+    font-size: 28px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .stat-item.highlight-badge .stat-label {
+    font-size: 15px;
+    text-align: right;
+    line-height: 1.4;
+    direction: rtl;
   }
 
   .stat-number {
