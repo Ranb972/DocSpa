@@ -211,67 +211,32 @@
   font-size: 16px;
 }
 
-/* Hero Stats */
-.hero-stats {
+/* Hero Highlights - Simple horizontal cards */
+.hero-highlights-row {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
   padding: 24px 0;
   border-top: 1px solid var(--color-gray-lighter);
 }
 
-.stat-item {
+.highlight-card {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.stat-number {
-  font-family: var(--font-primary);
-  font-size: 32px;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--color-primary) 0%, #60A5FA 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.02em;
-}
-
-.stat-icon {
-  font-size: 28px;
-  display: block;
-  flex-shrink: 0;
-}
-
-.stat-label {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--color-gray);
-}
-
-/* Highlight badge style - horizontal layout with RTL */
-.stat-item.highlight-badge {
   flex-direction: row;
   align-items: center;
   gap: 12px;
-  direction: rtl;
 }
 
-.stat-item.highlight-badge .stat-icon {
-  margin-bottom: 0;
+.highlight-emoji {
+  font-size: 28px;
+  flex-shrink: 0;
 }
 
-.stat-item.highlight-badge .stat-label {
+.highlight-text {
   font-size: 14px;
   font-weight: 600;
   color: var(--color-primary-dark);
-  text-align: right;
-}
-
-.stat-divider {
-  width: 1px;
-  height: 40px;
-  background: var(--color-gray-lighter);
+  white-space: nowrap;
 }
 
 /* Hero Visual */
@@ -598,8 +563,9 @@
     justify-content: center;
   }
 
-  .hero-stats {
+  .hero-highlights-row {
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .hero-image-container {
@@ -669,19 +635,15 @@
     justify-content: center;
   }
 
-  /* Stack stats vertically on mobile - centered with natural RTL text flow */
-  .hero-stats {
+  /* Stack highlights vertically on mobile */
+  .hero-highlights-row {
     flex-direction: column;
     gap: 12px;
     padding: 20px 0;
-    align-items: stretch;
   }
 
-  .stat-divider {
-    display: none;
-  }
-
-  .stat-item.highlight-badge {
+  .highlight-card {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -690,26 +652,16 @@
     background: rgba(255, 255, 255, 0.7);
     border-radius: 16px;
     border: 1px solid rgba(226, 232, 240, 0.8);
-    text-align: right;
     width: 100%;
-    direction: rtl;
   }
 
-  .stat-item.highlight-badge .stat-icon {
+  .highlight-emoji {
     font-size: 28px;
-    margin-bottom: 0;
-    flex-shrink: 0;
   }
 
-  .stat-item.highlight-badge .stat-label {
+  .highlight-text {
     font-size: 15px;
-    text-align: right;
-    line-height: 1.4;
-    direction: rtl;
-  }
-
-  .stat-number {
-    font-size: 24px;
+    white-space: normal;
   }
 
   .hero-image-container {

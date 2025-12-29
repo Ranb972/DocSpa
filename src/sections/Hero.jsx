@@ -97,24 +97,20 @@ const Hero = () => {
           </div>
 
           <div
-            className="hero-stats hero-highlights"
+            className="hero-highlights-row"
             data-aos="fade-up"
             data-aos-delay="500"
           >
-            <div className="stat-item highlight-badge">
-              <span className="stat-icon">😊</span>
-              <span className="stat-label">עשרות לקוחות מרוצים</span>
-            </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item highlight-badge">
-              <span className="stat-icon">⭐</span>
-              <span className="stat-label">מקצועיות ברמה גבוהה</span>
-            </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item highlight-badge">
-              <span className="stat-icon">💙</span>
-              <span className="stat-label">רואים את הבן אדם לפני השיניים</span>
-            </div>
+            {[
+              { emoji: '😊', text: 'עשרות לקוחות מרוצים' },
+              { emoji: '⭐', text: 'מקצועיות ברמה גבוהה' },
+              { emoji: '💙', text: 'רואים את הבן אדם לפני השיניים' },
+            ].map((item, index) => (
+              <div key={index} className="highlight-card">
+                <span className="highlight-emoji">{item.emoji}</span>
+                <span className="highlight-text">{item.text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
