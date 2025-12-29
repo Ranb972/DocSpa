@@ -132,6 +132,8 @@ const Hero = () => {
                   src={drMoritzImg}
                   alt="ד״ר עמית מוריץ - רופאת שיניים"
                   className="hero-doctor-image"
+                  loading="eager"
+                  decoding="async"
                   onError={() => setImageError(true)}
                 />
               </div>

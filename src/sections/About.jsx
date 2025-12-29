@@ -58,6 +58,8 @@ const About = () => {
                 <img
                   src="/dr-moritz-2.jpg"
                   alt="ד״ר עמית מוריץ"
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => e.target.parentElement.style.display = 'none'}
                 />
               </div>
@@ -65,6 +67,8 @@ const About = () => {
                 <img
                   src="/dr-moritz-3.jpg"
                   alt="ד״ר עמית מוריץ"
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => e.target.parentElement.style.display = 'none'}
                 />
               </div>

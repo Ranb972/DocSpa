@@ -129,100 +129,149 @@
   transform: translateY(0) scale(0.98);
 }
 
-/* Mobile Toggle */
+/* Mobile Toggle - 44px minimum touch target */
 .mobile-toggle {
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 6px;
-  width: 40px;
-  height: 40px;
-  background: none;
+  gap: 7px;
+  width: 44px;
+  height: 44px;
+  background: rgba(62, 142, 250, 0.08);
   border: none;
+  border-radius: 12px;
   cursor: pointer;
   padding: 0;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.mobile-toggle:hover {
+  background: rgba(62, 142, 250, 0.12);
+}
+
+.mobile-toggle:active {
+  transform: scale(0.95);
 }
 
 .toggle-line {
   display: block;
-  width: 18px;
-  height: 1.5px;
-  background-color: var(--color-black);
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-primary);
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  transform-origin: center;
+}
+
+.mobile-toggle.active {
+  background: rgba(62, 142, 250, 0.15);
 }
 
 .mobile-toggle.active .toggle-line:first-child {
-  transform: rotate(45deg) translate(2.5px, 2.5px);
+  transform: rotate(45deg) translate(3px, 3px);
 }
 
 .mobile-toggle.active .toggle-line:last-child {
-  transform: rotate(-45deg) translate(2.5px, -2.5px);
+  transform: rotate(-45deg) translate(3px, -3px);
 }
 
-/* Mobile Menu Overlay */
+/* Mobile Menu Overlay - Slide-in Animation */
 .mobile-menu {
   position: fixed;
   top: 64px;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(30px) saturate(180%);
-  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
   z-index: 9998;
   opacity: 0;
   visibility: hidden;
+  transform: translateY(-20px);
   transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .mobile-menu.open {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
 }
 
 .mobile-nav {
   display: flex;
   flex-direction: column;
-  padding: 32px 24px;
+  padding: 24px 20px;
+  gap: 8px;
 }
 
+/* Mobile nav links with staggered animation */
 .mobile-nav-link {
-  background: none;
-  border: none;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  border-radius: 16px;
   font-family: var(--font-primary);
-  font-size: 17px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 500;
   color: var(--color-black);
-  padding: 16px 0;
-  border-bottom: 1px solid var(--color-gray-lighter);
+  padding: 18px 20px;
+  min-height: 56px;
   cursor: pointer;
   text-align: right;
-  transition: color 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 0;
+  transform: translateX(20px);
 }
 
-.mobile-nav-link:hover {
+.mobile-menu.open .mobile-nav-link {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered animation delays */
+.mobile-menu.open .mobile-nav-link:nth-child(1) { transition-delay: 0.05s; }
+.mobile-menu.open .mobile-nav-link:nth-child(2) { transition-delay: 0.1s; }
+.mobile-menu.open .mobile-nav-link:nth-child(3) { transition-delay: 0.15s; }
+.mobile-menu.open .mobile-nav-link:nth-child(4) { transition-delay: 0.2s; }
+.mobile-menu.open .mobile-nav-link:nth-child(5) { transition-delay: 0.25s; }
+
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+  background: rgba(62, 142, 250, 0.1);
+  border-color: rgba(62, 142, 250, 0.2);
   color: var(--color-primary);
+  transform: translateX(-4px);
 }
 
+/* Mobile CTA with 44px+ touch target */
 .mobile-cta {
-  margin-top: 24px;
+  margin-top: 16px;
   font-family: var(--font-primary);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--color-white);
   background: linear-gradient(135deg, var(--color-primary) 0%, #60A5FA 100%);
   border: none;
-  padding: 18px 36px;
+  padding: 20px 36px;
+  min-height: 60px;
   border-radius: var(--radius-full);
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   box-shadow: 0 4px 20px rgba(62, 142, 250, 0.35);
+  opacity: 0;
+  transform: translateY(10px);
 }
 
-.mobile-cta:hover {
-  transform: translateY(-2px);
+.mobile-menu.open .mobile-cta {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.mobile-cta:hover,
+.mobile-cta:active {
+  transform: translateY(-2px) scale(1.02);
   box-shadow: 0 8px 30px rgba(62, 142, 250, 0.45);
 }
 
