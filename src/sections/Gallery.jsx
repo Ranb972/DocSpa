@@ -6,26 +6,35 @@ const Gallery = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+  const [imageErrors, setImageErrors] = useState({});
   const intervalRef = useRef(null);
 
   const slides = [
     {
       image: '/gallery-1.jpg',
       caption: 'ד"ר קובי וד"ר עמית מרוצים אחרי יום עמוס 😊',
+      emoji: '😊',
     },
     {
       image: '/gallery-2.jpg',
       caption: 'זכרונות מהמרפאה הישנה והאהובה 💙',
+      emoji: '💙',
     },
     {
       image: '/gallery-3.jpg',
       caption: 'עם הדיקן לשעבר של אונ\' לרפואת שיניים בתל אביב 🤓',
+      emoji: '🤓',
     },
     {
       image: '/gallery-4.jpg',
       caption: 'בכנס הר״ש 2025 👨‍⚕️👩‍⚕️',
+      emoji: '👨‍⚕️',
     },
   ];
+
+  const handleImageError = (index) => {
+    setImageErrors(prev => ({ ...prev, [index]: true }));
+  };
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -123,13 +132,21 @@ const Gallery = () => {
                 className={`gallery-slide ${index === currentSlide ? 'active' : ''}`}
               >
                 <div className="gallery-image-wrapper">
-                  <img
-                    src={slide.image}
-                    alt={slide.caption}
-                    className="gallery-image"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  {imageErrors[index] ? (
+                    <div className="gallery-placeholder">
+                      <span className="gallery-placeholder-emoji">{slide.emoji}</span>
+                      <span className="gallery-placeholder-text">תמונה בקרוב</span>
+                    </div>
+                  ) : (
+                    <img
+                      src={slide.image}
+                      alt={slide.caption}
+                      className="gallery-image"
+                      loading="lazy"
+                      decoding="async"
+                      onError={() => handleImageError(index)}
+                    />
+                  )}
                 </div>
                 <p className="gallery-caption">{slide.caption}</p>
               </div>

@@ -250,18 +250,18 @@
 }
 
 /* Highlight badge style - horizontal layout with RTL */
-.highlight-badge {
+.stat-item.highlight-badge {
   flex-direction: row;
   align-items: center;
   gap: 12px;
   direction: rtl;
 }
 
-.highlight-badge .stat-icon {
+.stat-item.highlight-badge .stat-icon {
   margin-bottom: 0;
 }
 
-.highlight-badge .stat-label {
+.stat-item.highlight-badge .stat-label {
   font-size: 14px;
   font-weight: 600;
   color: var(--color-primary-dark);
