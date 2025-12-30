@@ -1,23 +1,26 @@
+import { useLanguage } from '../context/LanguageContext';
 import './Testimonials.css';
 
 const Testimonials = () => {
+  const { t } = useLanguage();
+
   const testimonials = [
     {
-      name: 'שרה כ.',
-      text: 'ד״ר מוריץ מקצועית ונעימה מאוד. הצוות אדיב ומסביר כל שלב בטיפול. ממליצה בחום!',
-      initials: 'ש',
+      name: t.testimonials.reviews.review1.name,
+      text: t.testimonials.reviews.review1.text,
+      initials: t.testimonials.reviews.review1.initials,
       rating: 5,
     },
     {
-      name: 'דוד ל.',
-      text: 'לאחר חיפושים רבים מצאתי סוף סוף מרפאה שאני סומך עליה. תוצאות מעולות.',
-      initials: 'ד',
+      name: t.testimonials.reviews.review2.name,
+      text: t.testimonials.reviews.review2.text,
+      initials: t.testimonials.reviews.review2.initials,
       rating: 5,
     },
     {
-      name: 'מיכל א.',
-      text: 'הגעתי עם פחד מרופאי שיניים ויצאתי עם חיוך. הצוות מבין ורגיש.',
-      initials: 'מ',
+      name: t.testimonials.reviews.review3.name,
+      text: t.testimonials.reviews.review3.text,
+      initials: t.testimonials.reviews.review3.initials,
       rating: 5,
     },
   ];
@@ -28,10 +31,10 @@ const Testimonials = () => {
         <div className="testimonials-header" data-aos="fade-up">
           <span className="section-badge">
             <span className="badge-icon">⭐</span>
-            <span className="badge-text">המלצות</span>
+            <span className="badge-text">{t.testimonials.badge}</span>
           </span>
           <h2 className="headline-medium">
-            מה אומרים המטופלים
+            {t.testimonials.title}
           </h2>
         </div>
 
@@ -67,7 +70,7 @@ const Testimonials = () => {
             <span className="summary-score">5.0</span>
           </div>
           <p className="summary-text">
-            דירוג מושלם על בסיס ביקורות מטופלים מרוצים
+            {t.testimonials.summaryText}
           </p>
         </div>
       </div>

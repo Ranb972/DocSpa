@@ -1,20 +1,23 @@
+import { useLanguage } from '../context/LanguageContext';
 import './About.css';
 
 const About = () => {
+  const { t } = useLanguage();
+
   const highlights = [
     {
-      text: 'לקוחות מרוצים',
-      subtext: 'עשרות',
+      text: t.about.highlights.highlight1.text,
+      subtext: t.about.highlights.highlight1.subtext,
       icon: '😊',
     },
     {
-      text: 'מקצועיות',
-      subtext: 'ברמה גבוהה',
+      text: t.about.highlights.highlight2.text,
+      subtext: t.about.highlights.highlight2.subtext,
       icon: '⭐',
     },
     {
-      text: 'גישה אנושית',
-      subtext: 'רואים את הבן אדם לפני השיניים',
+      text: t.about.highlights.highlight3.text,
+      subtext: t.about.highlights.highlight3.subtext,
       icon: '💙',
     },
   ];
@@ -25,30 +28,26 @@ const About = () => {
         <div className="about-header" data-aos="fade-up">
           <span className="section-badge">
             <span className="badge-icon">👩‍⚕️</span>
-            <span className="badge-text">אודות</span>
+            <span className="badge-text">{t.about.badge}</span>
           </span>
           <h2 className="headline-medium">
-            גישה אישית לכל מטופל
+            {t.about.title}
           </h2>
         </div>
 
         <div className="about-grid">
           <div className="about-content" data-aos="fade-up" data-aos-delay="100">
             <p className="about-lead">
-              ד"ר עמית מוריץ, רופאת שיניים בוגרת אוניברסיטת קלוז׳ נפוקה ברומניה (שנתון 2022),
-              מנהלת לצד אביה ד"ר קובי מוריץ את מרפאת השיניים שלהם ברחובות.
+              {t.about.lead}
             </p>
             <p className="about-text">
-              במרפאה שלנו כל מטופל מקבל תשומת לב מלאה והקשבה אמיתית
-              לצרכים הייחודיים שלו. אנו מאמינים שטיפול שיניים איכותי
-              מתחיל ביחס אנושי ובאווירה נעימה.
+              {t.about.text1}
             </p>
             <p className="about-text">
-              המרפאה מציעה מגוון רחב של טיפולים -
-              משמירה על בריאות הפה ועד לטיפולים אסתטיים ושיקומיים.
+              {t.about.text2}
             </p>
             <a href="#services" className="btn btn-secondary">
-              לטיפולים שלנו
+              {t.about.servicesBtn}
             </a>
           </div>
 
@@ -57,7 +56,7 @@ const About = () => {
               <div className="stacked-card stacked-card-back">
                 <img
                   src="/dr-moritz-2.jpg"
-                  alt="ד״ר עמית מוריץ"
+                  alt={`${t.hero.name1} ${t.hero.name2}`}
                   loading="lazy"
                   decoding="async"
                   onError={(e) => e.target.parentElement.style.display = 'none'}
@@ -66,7 +65,7 @@ const About = () => {
               <div className="stacked-card stacked-card-front">
                 <img
                   src="/dr-moritz-3.jpg"
-                  alt="ד״ר עמית מוריץ"
+                  alt={`${t.hero.name1} ${t.hero.name2}`}
                   loading="lazy"
                   decoding="async"
                   onError={(e) => e.target.parentElement.style.display = 'none'}

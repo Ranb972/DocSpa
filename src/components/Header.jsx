@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import './Header.css';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t, language, toggleLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,11 +32,11 @@ const Header = () => {
   };
 
   const navItems = [
-    { id: 'about', label: 'אודות' },
-    { id: 'services', label: 'טיפולים' },
-    { id: 'clinic', label: 'המרפאה' },
-    { id: 'testimonials', label: 'המלצות' },
-    { id: 'contact', label: 'צור קשר' },
+    { id: 'about', label: t.nav.about },
+    { id: 'services', label: t.nav.services },
+    { id: 'clinic', label: t.nav.clinic },
+    { id: 'testimonials', label: t.nav.testimonials },
+    { id: 'contact', label: t.nav.contact },
   ];
 
   return (
@@ -60,17 +62,27 @@ const Header = () => {
             </ul>
           </nav>
 
-          <button
-            className="header-cta"
-            onClick={() => scrollToSection('contact')}
-          >
-            קביעת תור
-          </button>
+          <div className="header-actions">
+            <button
+              className="lang-toggle"
+              onClick={toggleLanguage}
+              aria-label={language === 'he' ? 'Switch to English' : 'Switch to Hebrew'}
+            >
+              {language === 'he' ? 'EN' : 'עב'}
+            </button>
+
+            <button
+              className="header-cta"
+              onClick={() => scrollToSection('contact')}
+            >
+              {t.nav.bookAppointment}
+            </button>
+          </div>
 
           <button
             className={`mobile-toggle ${isMobileMenuOpen ? 'active' : ''}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="תפריט"
+            aria-label={t.nav.menu}
           >
             <span className="toggle-line"></span>
             <span className="toggle-line"></span>
@@ -91,10 +103,19 @@ const Header = () => {
             </button>
           ))}
           <button
+            className="lang-toggle-mobile"
+            onClick={() => {
+              toggleLanguage();
+              setIsMobileMenuOpen(false);
+            }}
+          >
+            {language === 'he' ? 'English' : 'עברית'}
+          </button>
+          <button
             className="mobile-cta"
             onClick={() => scrollToSection('contact')}
           >
-            קביעת תור
+            {t.nav.bookAppointment}
           </button>
         </nav>
       </div>

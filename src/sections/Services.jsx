@@ -1,35 +1,38 @@
+import { useLanguage } from '../context/LanguageContext';
 import './Services.css';
 
 const Services = () => {
+  const { t, isRTL } = useLanguage();
+
   const services = [
     {
       icon: '🦷',
-      title: 'טיפולי שיניים משמרים',
-      description: 'סתימות, טיפולי שורש ושמירה על בריאות השיניים לטווח ארוך',
+      title: t.services.items.conservative.title,
+      description: t.services.items.conservative.description,
       link: '#contact',
     },
     {
       icon: '🔧',
-      title: 'טיפולים משקמים',
-      description: 'שיקום מלא של השיניים והפה להחזרת התפקוד והאסתטיקה',
+      title: t.services.items.restorative.title,
+      description: t.services.items.restorative.description,
       link: '#contact',
     },
     {
       icon: '⚕️',
-      title: 'טיפולים כירורגיים',
-      description: 'עקירות, ניתוחים קטנים וטיפולים כירורגיים מתקדמים',
+      title: t.services.items.surgical.title,
+      description: t.services.items.surgical.description,
       link: '#contact',
     },
     {
       icon: '✨',
-      title: 'טיפולים אסתטיים',
-      description: 'הלבנת שיניים, השלמות אסתטיות ועיצוב חיוך מושלם',
+      title: t.services.items.aesthetic.title,
+      description: t.services.items.aesthetic.description,
       link: '#contact',
     },
     {
       icon: '🔬',
-      title: 'עבודות מעבדה',
-      description: 'תותבות ועבודות על שתלים בהתאמה אישית',
+      title: t.services.items.lab.title,
+      description: t.services.items.lab.description,
       link: '#contact',
     },
   ];
@@ -40,13 +43,13 @@ const Services = () => {
         <div className="services-header" data-aos="fade-up">
           <span className="section-badge">
             <span className="badge-icon">🦷</span>
-            <span className="badge-text">טיפולים</span>
+            <span className="badge-text">{t.services.badge}</span>
           </span>
           <h2 className="headline-medium">
-            מגוון טיפולים מתקדמים
+            {t.services.title}
           </h2>
           <p className="services-subtitle">
-            מרפאת ד״ר עמית מוריץ מציעה מגוון טיפולי שיניים מקצועיים
+            {t.services.subtitle}
           </p>
         </div>
 
@@ -66,8 +69,8 @@ const Services = () => {
                 <h3 className="service-title">{service.title}</h3>
                 <p className="service-description">{service.description}</p>
                 <span className="service-link">
-                  פרטים נוספים
-                  <span className="arrow">‹</span>
+                  {t.services.moreDetails}
+                  <span className="arrow">{isRTL ? '‹' : '›'}</span>
                 </span>
               </div>
             </a>
@@ -75,9 +78,9 @@ const Services = () => {
         </div>
 
         <div className="services-cta" data-aos="fade-up" data-aos-delay="500">
-          <p className="cta-text">מעוניינים לשמוע עוד על הטיפולים שלנו?</p>
+          <p className="cta-text">{t.services.ctaText}</p>
           <a href="#contact" className="btn btn-primary btn-glow">
-            <span className="btn-text">צרו קשר</span>
+            <span className="btn-text">{t.services.ctaButton}</span>
             <span className="btn-icon">📞</span>
           </a>
         </div>

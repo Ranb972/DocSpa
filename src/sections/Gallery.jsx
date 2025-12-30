@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import './Gallery.css';
 
 const Gallery = () => {
@@ -8,26 +9,27 @@ const Gallery = () => {
   const [touchEnd, setTouchEnd] = useState(null);
   const [imageErrors, setImageErrors] = useState({});
   const intervalRef = useRef(null);
+  const { t, isRTL } = useLanguage();
 
   const slides = [
     {
       image: '/gallery-1.jpg',
-      caption: 'ד"ר קובי וד"ר עמית מרוצים אחרי יום עמוס 😊',
+      caption: t.gallery.captions.caption1,
       emoji: '😊',
     },
     {
       image: '/gallery-2.jpg',
-      caption: 'זכרונות מהמרפאה הישנה והאהובה 💙',
+      caption: t.gallery.captions.caption2,
       emoji: '💙',
     },
     {
       image: '/gallery-3.jpg',
-      caption: 'עם הדיקן לשעבר של אונ\' לרפואת שיניים בתל אביב 🤓',
+      caption: t.gallery.captions.caption3,
       emoji: '🤓',
     },
     {
       image: '/gallery-4.jpg',
-      caption: 'בכנס הר״ש 2025 👨‍⚕️👩‍⚕️',
+      caption: t.gallery.captions.caption4,
       emoji: '👨‍⚕️',
     },
   ];
@@ -60,7 +62,7 @@ const Gallery = () => {
     };
   }, [isPaused, nextSlide]);
 
-  // Touch/swipe support (RTL - swipe left = next, swipe right = prev)
+  // Touch/swipe support
   const minSwipeDistance = 50;
 
   const onTouchStart = (e) => {
@@ -78,7 +80,6 @@ const Gallery = () => {
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
 
-    // RTL: swipe left = next, swipe right = prev
     if (isLeftSwipe) {
       nextSlide();
     } else if (isRightSwipe) {
@@ -92,10 +93,10 @@ const Gallery = () => {
         <div className="gallery-header" data-aos="fade-up">
           <span className="section-badge">
             <span className="badge-icon">📸</span>
-            <span className="badge-text">גלריה</span>
+            <span className="badge-text">{t.gallery.badge}</span>
           </span>
-          <h2 className="headline-medium">הגלריה שלנו</h2>
-          <p className="gallery-subtitle">רגעים מיוחדים מהמרפאה</p>
+          <h2 className="headline-medium">{t.gallery.title}</h2>
+          <p className="gallery-subtitle">{t.gallery.subtitle}</p>
         </div>
 
         <div
@@ -108,20 +109,20 @@ const Gallery = () => {
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
-          {/* Navigation Arrows - RTL: next on left, prev on right */}
+          {/* Navigation Arrows */}
           <button
             className="gallery-arrow gallery-arrow-next"
             onClick={nextSlide}
-            aria-label="התמונה הבאה"
+            aria-label={t.gallery.nextImage}
           >
-            ›
+            {isRTL ? '›' : '‹'}
           </button>
           <button
             className="gallery-arrow gallery-arrow-prev"
             onClick={prevSlide}
-            aria-label="התמונה הקודמת"
+            aria-label={t.gallery.prevImage}
           >
-            ‹
+            {isRTL ? '‹' : '›'}
           </button>
 
           {/* Slides Container */}
@@ -135,7 +136,7 @@ const Gallery = () => {
                   {imageErrors[index] ? (
                     <div className="gallery-placeholder">
                       <span className="gallery-placeholder-emoji">{slide.emoji}</span>
-                      <span className="gallery-placeholder-text">תמונה בקרוב</span>
+                      <span className="gallery-placeholder-text">{t.gallery.imageSoon}</span>
                     </div>
                   ) : (
                     <img
@@ -160,7 +161,7 @@ const Gallery = () => {
                 key={index}
                 className={`gallery-dot ${index === currentSlide ? 'active' : ''}`}
                 onClick={() => goToSlide(index)}
-                aria-label={`עבור לתמונה ${index + 1}`}
+                aria-label={`${t.gallery.goToImage} ${index + 1}`}
               />
             ))}
           </div>

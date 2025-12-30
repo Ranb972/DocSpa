@@ -1,22 +1,24 @@
+import { useLanguage } from '../context/LanguageContext';
 import './Clinic.css';
 
 const Clinic = () => {
+  const { t } = useLanguage();
 
   const features = [
     {
       icon: '🎓',
-      title: 'ידע וניסיון',
-      description: 'מקצועיות והכשרה מקיפה לטיפול מיטבי',
+      title: t.clinic.features.knowledge.title,
+      description: t.clinic.features.knowledge.description,
     },
     {
       icon: '🛋️',
-      title: 'אווירה טובה',
-      description: 'סביבה נעימה ומרגיעה לחוויה נוחה',
+      title: t.clinic.features.atmosphere.title,
+      description: t.clinic.features.atmosphere.description,
     },
     {
       icon: '🧼',
-      title: 'סטריליות מלאה',
-      description: 'עמידה בסטנדרטים הגבוהים ביותר',
+      title: t.clinic.features.sterility.title,
+      description: t.clinic.features.sterility.description,
     },
   ];
 
@@ -28,14 +30,13 @@ const Clinic = () => {
             <div data-aos="fade-up">
               <span className="section-badge">
                 <span className="badge-icon">🏥</span>
-                <span className="badge-text">המרפאה</span>
+                <span className="badge-text">{t.clinic.badge}</span>
               </span>
               <h2 className="headline-medium">
-                סביבה מתקדמת ומרגיעה
+                {t.clinic.title}
               </h2>
               <p className="clinic-description">
-                המרפאה ברחובות מציעה טיפולי שיניים מקצועיים באווירה נעימה ומשפחתית.
-                אנו שמים דגש על יחס אישי וחם לכל מטופל.
+                {t.clinic.description}
               </p>
             </div>
 
@@ -62,19 +63,19 @@ const Clinic = () => {
               <div className="gallery-item gallery-main">
                 <div className="gallery-placeholder">
                   <span className="gallery-icon">🏥</span>
-                  <span className="gallery-label">המרפאה מבפנים</span>
+                  <span className="gallery-label">{t.clinic.gallery.inside}</span>
                 </div>
               </div>
               <div className="gallery-item gallery-small" data-aos="fade-up" data-aos-delay="300">
                 <div className="gallery-placeholder">
                   <span className="gallery-icon">🪥</span>
-                  <span className="gallery-label">חדר טיפולים</span>
+                  <span className="gallery-label">{t.clinic.gallery.treatment}</span>
                 </div>
               </div>
               <div className="gallery-item gallery-small" data-aos="fade-up" data-aos-delay="400">
                 <div className="gallery-placeholder">
                   <span className="gallery-icon">🛋️</span>
-                  <span className="gallery-label">אזור המתנה</span>
+                  <span className="gallery-label">{t.clinic.gallery.waiting}</span>
                 </div>
               </div>
             </div>

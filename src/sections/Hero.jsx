@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import './Hero.css';
 
 const Hero = () => {
   const heroRef = useRef(null);
   const [scrollY, setScrollY] = useState(0);
   const [imageError, setImageError] = useState(false);
+  const { t, language } = useLanguage();
 
   // Doctor image from public folder
   const drMoritzImg = '/dr-moritz.jpg';
@@ -51,7 +53,7 @@ const Hero = () => {
             data-aos-delay="0"
           >
             <span className="badge-icon">🦷</span>
-            <span className="badge-text">מרפאה פרטית ברחובות</span>
+            <span className="badge-text">{t.hero.badge}</span>
           </div>
 
           <h1
@@ -59,8 +61,8 @@ const Hero = () => {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <span className="title-line">ד״ר עמית</span>
-            <span className="title-line title-accent">מוריץ</span>
+            <span className="title-line">{t.hero.name1}</span>
+            <span className="title-line title-accent">{t.hero.name2}</span>
           </h1>
 
           <p
@@ -68,7 +70,7 @@ const Hero = () => {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <span className="subtitle-text">רופאת שיניים</span>
+            <span className="subtitle-text">{t.hero.title}</span>
             <span className="subtitle-sparkle">✨</span>
           </p>
 
@@ -77,9 +79,9 @@ const Hero = () => {
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            טיפולי שיניים ברמה הגבוהה ביותר,
+            {t.hero.description}
             <br />
-            עם תשומת לב אישית לכל מטופל.
+            {t.hero.descriptionLine2}
           </p>
 
           <div
@@ -88,26 +90,26 @@ const Hero = () => {
             data-aos-delay="400"
           >
             <a href="tel:+972505908582" className="btn btn-primary btn-large btn-glow">
-              <span className="btn-text">התקשרו עכשיו</span>
+              <span className="btn-text">{t.hero.callNow}</span>
               <span className="btn-icon">📞</span>
             </a>
             <a href="#about" className="btn btn-secondary btn-large">
-              למידע נוסף
+              {t.hero.moreInfo}
             </a>
           </div>
 
           <div className="stats-container" data-aos="fade-up" data-aos-delay="500">
             <div className="stat-card">
               <span className="stat-emoji">😊</span>
-              <span className="stat-text">עשרות לקוחות מרוצים</span>
+              <span className="stat-text">{t.hero.stats.stat1}</span>
             </div>
             <div className="stat-card">
               <span className="stat-emoji">⭐</span>
-              <span className="stat-text">מקצועיות ברמה גבוהה</span>
+              <span className="stat-text">{t.hero.stats.stat2}</span>
             </div>
             <div className="stat-card">
               <span className="stat-emoji">💙</span>
-              <span className="stat-text">גישה אנושית - רואים את הבן אדם לפני השיניים</span>
+              <span className="stat-text">{t.hero.stats.stat3}</span>
             </div>
           </div>
         </div>
@@ -124,7 +126,7 @@ const Hero = () => {
               <div className="hero-image-frame">
                 <img
                   src={drMoritzImg}
-                  alt="ד״ר עמית מוריץ - רופאת שיניים"
+                  alt={`${t.hero.name1} ${t.hero.name2} - ${t.hero.title}`}
                   className="hero-doctor-image"
                   loading="eager"
                   decoding="async"
@@ -135,7 +137,7 @@ const Hero = () => {
               <div className="hero-image-placeholder">
                 <div className="placeholder-inner">
                   <span className="placeholder-icon">👩‍⚕️</span>
-                  <span className="placeholder-text">ד״ר עמית מוריץ</span>
+                  <span className="placeholder-text">{t.hero.name1} {t.hero.name2}</span>
                 </div>
               </div>
             )}
@@ -158,7 +160,7 @@ const Hero = () => {
         <div className="scroll-mouse">
           <div className="scroll-wheel"></div>
         </div>
-        <span className="scroll-text">גלול למטה</span>
+        <span className="scroll-text">{t.hero.scrollDown}</span>
       </div>
     </section>
   );
