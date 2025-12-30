@@ -990,18 +990,42 @@ textarea::placeholder {
    Keep layout RTL, but fix text direction for English
    ================================ */
 
-/* Hero section English text */
+/* Hero section English - flip layout and fix text */
+html[lang="en"] .hero-inner {
+  direction: ltr;
+}
+
+html[lang="en"] .hero-content {
+  text-align: left;
+}
+
 html[lang="en"] .hero-tagline,
 html[lang="en"] .hero-description {
   direction: ltr;
-  text-align: right;
+  text-align: left;
 }
 
-/* About section English text */
+html[lang="en"] .hero-badge {
+  justify-content: flex-start;
+}
+
+html[lang="en"] .hero-buttons {
+  justify-content: flex-start;
+}
+
+/* About section English - flip layout and fix text */
+html[lang="en"] .about-grid {
+  direction: ltr;
+}
+
+html[lang="en"] .about-content {
+  text-align: left;
+}
+
 html[lang="en"] .about-lead,
 html[lang="en"] .about-text {
   direction: ltr;
-  text-align: right;
+  text-align: left;
 }
 
 /* Services section English text */
