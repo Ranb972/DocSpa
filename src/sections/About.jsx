@@ -6,15 +6,18 @@ const About = () => {
 
   const highlights = [
     {
-      text: t.about.highlights.highlight1.fullText,
+      title: t.about.highlights.highlight1.title,
+      subtitle: t.about.highlights.highlight1.subtitle,
       icon: '😊',
     },
     {
-      text: t.about.highlights.highlight2.fullText,
+      title: t.about.highlights.highlight2.title,
+      subtitle: t.about.highlights.highlight2.subtitle,
       icon: '⭐',
     },
     {
-      text: t.about.highlights.highlight3.fullText,
+      title: t.about.highlights.highlight3.title,
+      subtitle: t.about.highlights.highlight3.subtitle,
       icon: '💙',
     },
   ];
@@ -81,7 +84,8 @@ const About = () => {
               data-aos-delay={300 + index * 100}
             >
               <span className="highlight-icon">{item.icon}</span>
-              <span className="highlight-text">{item.text}</span>
+              <span className="highlight-text">{item.title}</span>
+              <span className="highlight-subtext">{item.subtitle}</span>
             </div>
           ))}
         </div>
