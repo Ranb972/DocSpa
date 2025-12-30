@@ -40,9 +40,9 @@ export const translations = {
       text2: 'המרפאה מציעה מגוון רחב של טיפולים - משמירה על בריאות הפה ועד לטיפולים אסתטיים ושיקומיים.',
       servicesBtn: 'לטיפולים שלנו',
       highlights: {
-        highlight1: { text: 'לקוחות מרוצים', subtext: 'עשרות' },
-        highlight2: { text: 'מקצועיות', subtext: 'ברמה גבוהה' },
-        highlight3: { text: 'גישה אנושית', subtext: 'רואים את הבן אדם לפני השיניים' },
+        highlight1: { fullText: 'עשרות לקוחות מרוצים' },
+        highlight2: { fullText: 'מקצועיות ברמה גבוהה' },
+        highlight3: { fullText: 'גישה אנושית - רואים את הבן אדם לפני השיניים' },
       },
     },
 
@@ -206,9 +206,9 @@ export const translations = {
       text2: 'The clinic offers a wide range of treatments - from maintaining oral health to aesthetic and restorative procedures.',
       servicesBtn: 'Our Services',
       highlights: {
-        highlight1: { text: 'Satisfied Patients', subtext: 'Dozens' },
-        highlight2: { text: 'Professionalism', subtext: 'High Level' },
-        highlight3: { text: 'Personal Approach', subtext: 'We see the person before the teeth' },
+        highlight1: { fullText: 'Dozens of Satisfied Patients' },
+        highlight2: { fullText: 'High-Level Professionalism' },
+        highlight3: { fullText: 'Personal Approach - We see the person before the teeth' },
       },
     },
 
