@@ -23,12 +23,13 @@ export const LanguageProvider = ({ children }) => {
   const t = translations[language];
   const isRTL = language === 'he';
 
-  // Update document direction and lang when language changes
+  // Update document lang when language changes (keep RTL layout for both)
   useEffect(() => {
     document.documentElement.lang = language;
-    document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+    // Keep RTL direction for consistent layout in both languages
+    document.documentElement.dir = 'rtl';
     localStorage.setItem('docspLang', language);
-  }, [language, isRTL]);
+  }, [language]);
 
   const toggleLanguage = () => {
     setLanguage((prev) => (prev === 'he' ? 'en' : 'he'));

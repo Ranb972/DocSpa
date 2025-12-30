@@ -9,7 +9,7 @@ const Gallery = () => {
   const [touchEnd, setTouchEnd] = useState(null);
   const [imageErrors, setImageErrors] = useState({});
   const intervalRef = useRef(null);
-  const { t, isRTL } = useLanguage();
+  const { t } = useLanguage();
 
   const slides = [
     {
@@ -115,14 +115,14 @@ const Gallery = () => {
             onClick={nextSlide}
             aria-label={t.gallery.nextImage}
           >
-            {isRTL ? '›' : '‹'}
+            ›
           </button>
           <button
             className="gallery-arrow gallery-arrow-prev"
             onClick={prevSlide}
             aria-label={t.gallery.prevImage}
           >
-            {isRTL ? '‹' : '›'}
+            ‹
           </button>
 
           {/* Slides Container */}

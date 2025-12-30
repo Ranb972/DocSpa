@@ -317,7 +317,3 @@
   }
 }
 
-/* LTR mode adjustments */
-html[dir="ltr"] .mobile-nav-link {
-  text-align: left;
-}

@@ -3,7 +3,7 @@ import { Stethoscope, Wrench, Syringe, Sparkles, Microscope } from 'lucide-react
 import './Services.css';
 
 const Services = () => {
-  const { t, isRTL } = useLanguage();
+  const { t } = useLanguage();
 
   const services = [
     {
@@ -76,7 +76,7 @@ const Services = () => {
                 <p className="service-description">{service.description}</p>
                 <span className="service-link">
                   {t.services.moreDetails}
-                  <span className="arrow">{isRTL ? '‹' : '›'}</span>
+                  <span className="arrow">‹</span>
                 </span>
               </div>
             </a>
