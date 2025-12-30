@@ -84,8 +84,8 @@ const About = () => {
               data-aos-delay={300 + index * 100}
             >
               <span className="highlight-icon">{item.icon}</span>
-              <span className="highlight-text">{item.text}</span>
               <span className="highlight-subtext">{item.subtext}</span>
+              <span className="highlight-text">{item.text}</span>
             </div>
           ))}
         </div>
