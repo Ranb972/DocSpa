@@ -1,4 +1,5 @@
 import { useLanguage } from '../context/LanguageContext';
+import { Stethoscope, Wrench, Syringe, Sparkles, Microscope } from 'lucide-react';
 import './Services.css';
 
 const Services = () => {
@@ -6,31 +7,31 @@ const Services = () => {
 
   const services = [
     {
-      icon: '🦷',
+      icon: Stethoscope,
       title: t.services.items.conservative.title,
       description: t.services.items.conservative.description,
       link: '#contact',
     },
     {
-      icon: '🔧',
+      icon: Wrench,
       title: t.services.items.restorative.title,
       description: t.services.items.restorative.description,
       link: '#contact',
     },
     {
-      icon: '⚕️',
+      icon: Syringe,
       title: t.services.items.surgical.title,
       description: t.services.items.surgical.description,
       link: '#contact',
     },
     {
-      icon: '✨',
+      icon: Sparkles,
       title: t.services.items.aesthetic.title,
       description: t.services.items.aesthetic.description,
       link: '#contact',
     },
     {
-      icon: '🔬',
+      icon: Microscope,
       title: t.services.items.lab.title,
       description: t.services.items.lab.description,
       link: '#contact',
@@ -64,7 +65,12 @@ const Services = () => {
             >
               <div className="service-card-inner">
                 <div className="service-icon-wrapper">
-                  <span className="service-icon">{service.icon}</span>
+                  <service.icon
+                    className="service-icon"
+                    size={36}
+                    strokeWidth={1.5}
+                    color="#B8860B"
+                  />
                 </div>
                 <h3 className="service-title">{service.title}</h3>
                 <p className="service-description">{service.description}</p>
