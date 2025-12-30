@@ -985,3 +985,46 @@ textarea::placeholder {
   letter-spacing: 0.02em;
 }
 
+/* ================================
+   English Text Direction Fix
+   Keep layout RTL, but fix text direction for English
+   ================================ */
+
+/* Hero section English text */
+html[lang="en"] .hero-tagline,
+html[lang="en"] .hero-description {
+  direction: ltr;
+  text-align: right;
+}
+
+/* About section English text */
+html[lang="en"] .about-lead,
+html[lang="en"] .about-text {
+  direction: ltr;
+  text-align: right;
+}
+
+/* Services section English text */
+html[lang="en"] .service-description {
+  direction: ltr;
+  text-align: center;
+}
+
+/* Testimonials English text */
+html[lang="en"] .testimonial-text {
+  direction: ltr;
+  text-align: right;
+}
+
+/* Contact section English text */
+html[lang="en"] .contact-text {
+  direction: ltr;
+  text-align: right;
+}
+
+/* Clinic section English text */
+html[lang="en"] .feature-description {
+  direction: ltr;
+  text-align: right;
+}
+
