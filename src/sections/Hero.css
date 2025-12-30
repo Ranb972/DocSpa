@@ -647,8 +647,8 @@
   }
 
   .stat-text {
-    white-space: normal;
-    text-align: center;
+    white-space: nowrap;
+    font-size: 0.95rem;
   }
 
   .hero-image-container {
