@@ -1,5 +1,6 @@
 import { useLanguage } from '../context/LanguageContext';
-import { Aperture, Hexagon, Milestone, Syringe, Wrench } from 'lucide-react';
+import { Syringe, Wrench } from 'lucide-react';
+import { ToothMirror, ToothCrown, ToothImplant } from '../components/DentalIcons';
 import './Services.css';
 
 const Services = () => {
@@ -7,19 +8,19 @@ const Services = () => {
 
   const services = [
     {
-      icon: Aperture,
+      icon: ToothMirror,
       title: t.services.items.conservative.title,
       description: t.services.items.conservative.description,
       link: '#contact',
     },
     {
-      icon: Hexagon,
+      icon: ToothCrown,
       title: t.services.items.restorative.title,
       description: t.services.items.restorative.description,
       link: '#contact',
     },
     {
-      icon: Milestone,
+      icon: ToothImplant,
       title: t.services.items.surgical.title,
       description: t.services.items.surgical.description,
       link: '#contact',
