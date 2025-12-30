@@ -649,12 +649,21 @@
 
   .stat-card {
     width: 100%;
+    flex-direction: column;
     justify-content: center;
+    padding: 16px 20px;
+    gap: 8px;
+  }
+
+  .stat-emoji {
+    font-size: 1.8rem;
   }
 
   .stat-text {
-    white-space: nowrap;
-    font-size: 0.95rem;
+    white-space: normal;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    text-align: center;
   }
 
   .hero-image-container {
