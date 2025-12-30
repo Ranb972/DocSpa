@@ -1046,9 +1046,22 @@ html[lang="en"] .contact-text {
   text-align: right;
 }
 
-/* Clinic section English text */
+/* Clinic section English - flip layout and fix text */
+html[lang="en"] .clinic-content {
+  direction: ltr;
+}
+
+html[lang="en"] .clinic-text {
+  text-align: left;
+}
+
+html[lang="en"] .clinic-description {
+  direction: ltr;
+  text-align: left;
+}
+
 html[lang="en"] .feature-description {
   direction: ltr;
-  text-align: right;
+  text-align: left;
 }
 
