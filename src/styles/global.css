@@ -1009,6 +1009,13 @@ html[lang="en"] .hero-badge {
   justify-content: flex-start;
 }
 
+/* Mobile: center hero badge in English */
+@media (max-width: 734px) {
+  html[lang="en"] .hero-badge {
+    justify-content: center;
+  }
+}
+
 html[lang="en"] .hero-buttons {
   justify-content: flex-start;
 }
