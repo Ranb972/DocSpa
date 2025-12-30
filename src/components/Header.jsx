@@ -79,14 +79,23 @@ const Header = () => {
             </button>
           </div>
 
-          <button
-            className={`mobile-toggle ${isMobileMenuOpen ? 'active' : ''}`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={t.nav.menu}
-          >
-            <span className="toggle-line"></span>
-            <span className="toggle-line"></span>
-          </button>
+          <div className="mobile-actions">
+            <button
+              className="lang-toggle-header-mobile"
+              onClick={toggleLanguage}
+              aria-label={language === 'he' ? 'Switch to English' : 'Switch to Hebrew'}
+            >
+              {language === 'he' ? 'EN' : 'עב'}
+            </button>
+            <button
+              className={`mobile-toggle ${isMobileMenuOpen ? 'active' : ''}`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={t.nav.menu}
+            >
+              <span className="toggle-line"></span>
+              <span className="toggle-line"></span>
+            </button>
+          </div>
         </div>
       </header>
 
