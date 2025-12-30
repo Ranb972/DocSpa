@@ -1,5 +1,5 @@
 import { useLanguage } from '../context/LanguageContext';
-import { Search, Crown, Anchor, Syringe, Wrench } from 'lucide-react';
+import { Aperture, Hexagon, Milestone, Syringe, Wrench } from 'lucide-react';
 import './Services.css';
 
 const Services = () => {
@@ -7,19 +7,19 @@ const Services = () => {
 
   const services = [
     {
-      icon: Search,
+      icon: Aperture,
       title: t.services.items.conservative.title,
       description: t.services.items.conservative.description,
       link: '#contact',
     },
     {
-      icon: Crown,
+      icon: Hexagon,
       title: t.services.items.restorative.title,
       description: t.services.items.restorative.description,
       link: '#contact',
     },
     {
-      icon: Anchor,
+      icon: Milestone,
       title: t.services.items.surgical.title,
       description: t.services.items.surgical.description,
       link: '#contact',
