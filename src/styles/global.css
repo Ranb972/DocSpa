@@ -1029,6 +1029,34 @@ html[lang="en"] .hero-badge {
   html[lang="en"] .hero-buttons {
     justify-content: center;
   }
+
+  html[lang="en"] .hero-visual {
+    justify-content: center;
+  }
+
+  html[lang="en"] .hero-image-container {
+    margin: 0 auto;
+  }
+
+  /* About highlights English mobile - center text */
+  html[lang="en"] .highlight-item {
+    text-align: center;
+  }
+
+  html[lang="en"] .highlight-text,
+  html[lang="en"] .highlight-subtext {
+    direction: ltr;
+    text-align: center;
+  }
+
+  html[lang="en"] .about-content {
+    text-align: center;
+  }
+
+  html[lang="en"] .about-lead,
+  html[lang="en"] .about-text {
+    text-align: center;
+  }
 }
 
 html[lang="en"] .hero-buttons {

@@ -558,6 +558,8 @@
 
   .hero-visual {
     order: 0;
+    justify-content: center;
+    width: 100%;
   }
 
   .hero-actions {
@@ -570,6 +572,7 @@
 
   .hero-image-container {
     max-width: 300px;
+    margin: 0 auto;
   }
 
   .floating-icon {
@@ -617,7 +620,10 @@
   }
 
   .hero-description {
-    font-size: 16px;
+    font-size: 15px;
+    max-width: 100%;
+    padding: 0 10px;
+    line-height: 1.6;
   }
 
   .hero-description br {
