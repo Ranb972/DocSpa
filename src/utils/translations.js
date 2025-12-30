@@ -206,8 +206,8 @@ export const translations = {
       text2: 'The clinic offers a wide range of treatments - from maintaining oral health to aesthetic and restorative procedures.',
       servicesBtn: 'Our Services',
       highlights: {
-        highlight1: { title: 'Dozens', subtitle: 'Satisfied Patients' },
-        highlight2: { title: 'Professionalism', subtitle: 'High Level' },
+        highlight1: { title: 'Dozens', subtitle: 'of Satisfied Patients' },
+        highlight2: { title: 'Professionalism', subtitle: 'At the Highest Level' },
         highlight3: { title: 'Personal Approach', subtitle: 'We see the person before the teeth' },
       },
     },
