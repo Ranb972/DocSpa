@@ -14,10 +14,8 @@ export const ToothMirror = ({ size = 24, strokeWidth = 1.5, color = 'currentColo
     strokeLinejoin="round"
     className={className}
   >
-    {/* Mirror head - circle */}
-    <circle cx="12" cy="6" r="4.5" />
-    {/* Handle */}
-    <line x1="12" y1="10.5" x2="12" y2="22" />
+    <circle cx="12" cy="7" r="5" />
+    <line x1="12" y1="12" x2="12" y2="22" />
   </svg>
 );
 
