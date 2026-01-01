@@ -1,8 +1,8 @@
 /* DocSpa - Premium Dental Spa Design System */
 /* Luxury Medical Aesthetic with RTL Support */
 
-/* Premium Fonts: Heebo (Hebrew) + Playfair Display (Elegant English) */
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+/* Premium Fonts: Heebo (Hebrew) + Manrope (English) + Playfair Display (Elegant) */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 
 :root {
   /* Award-Winning Color Palette */
@@ -45,6 +45,7 @@
 
   /* Typography */
   --font-primary: 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-english: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Playfair Display', Georgia, serif;
   --font-weight-light: 300;
   --font-weight-regular: 400;
@@ -989,6 +990,25 @@ textarea::placeholder {
    English Text Direction Fix
    Keep layout RTL, but fix text direction for English
    ================================ */
+
+/* Apply Manrope font for English */
+html[lang="en"] {
+  font-family: var(--font-english);
+}
+
+html[lang="en"] body,
+html[lang="en"] h1,
+html[lang="en"] h2,
+html[lang="en"] h3,
+html[lang="en"] h4,
+html[lang="en"] h5,
+html[lang="en"] h6,
+html[lang="en"] p,
+html[lang="en"] span,
+html[lang="en"] a,
+html[lang="en"] button {
+  font-family: var(--font-english);
+}
 
 /* Hero section English - flip layout and fix text */
 html[lang="en"] .hero-inner {

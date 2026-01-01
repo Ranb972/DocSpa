@@ -175,7 +175,7 @@ export const translations = {
       testimonials: 'Reviews',
       contact: 'Contact',
       home: 'Home',
-      bookAppointment: 'Book Appointment',
+      bookAppointment: 'Book Your Visit',
       menu: 'Menu',
     },
 
@@ -184,7 +184,7 @@ export const translations = {
       badge: 'Private Clinic in Rehovot',
       name1: 'Dr. Amit',
       name2: 'Moritz',
-      title: 'Dentist',
+      title: 'Aesthetic & Restorative Dentistry',
       description: 'Dental care at the highest level,',
       descriptionLine2: 'with personal attention to every patient.',
       callNow: 'Call Now',
@@ -200,7 +200,7 @@ export const translations = {
     // About Section
     about: {
       badge: 'About',
-      title: 'Personal approach to every patient',
+      title: 'Personalized Care for Every Smile',
       lead: 'Dr. Amit Moritz, a dentist who graduated from Cluj-Napoca University in Romania (Class of 2022), manages the dental clinic in Rehovot alongside her father, Dr. Kobi Moritz.',
       text1: 'At our clinic, every patient receives full attention and genuine listening to their unique needs. We believe that quality dental care starts with a human touch and a pleasant atmosphere.',
       text2: 'The clinic offers a wide range of treatments - from maintaining oral health to aesthetic and restorative procedures.',
@@ -264,7 +264,7 @@ export const translations = {
     // Clinic Section
     clinic: {
       badge: 'The Clinic',
-      title: 'Advanced and Relaxing Environment',
+      title: 'Advanced and Relaxing Atmosphere',
       description: 'Our clinic in Rehovot offers professional dental treatments in a pleasant and family-friendly atmosphere. We emphasize personal and warm care for every patient.',
       features: {
         knowledge: { title: 'Knowledge & Experience', description: 'Professional expertise and comprehensive training for optimal care' },
