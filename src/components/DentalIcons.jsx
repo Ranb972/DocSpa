@@ -1,6 +1,6 @@
 // Custom Dental SVG Icons - professional dental-specific icons
 
-// Dental Examination Set (mirror + probe crossed) - for Conservative Dentistry
+// Dental Mirror - for Conservative Dentistry (simple lollipop shape)
 export const ToothMirror = ({ size = 24, strokeWidth = 1.5, color = 'currentColor', className = '' }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -14,15 +14,10 @@ export const ToothMirror = ({ size = 24, strokeWidth = 1.5, color = 'currentColo
     strokeLinejoin="round"
     className={className}
   >
-    {/* Dental Mirror - round mirror on handle */}
-    <circle cx="6" cy="5" r="3.5" />
-    <line x1="8.5" y1="7.5" x2="14" y2="13" />
-    <line x1="14" y1="13" x2="16" y2="15" />
-
-    {/* Dental Explorer/Probe - thin pointed tool */}
-    <line x1="18" y1="3" x2="10" y2="11" />
-    <line x1="10" y1="11" x2="8" y2="14" />
-    <path d="M8 14 L7 16" />
+    {/* Mirror head - circle */}
+    <circle cx="12" cy="6" r="4.5" />
+    {/* Handle */}
+    <line x1="12" y1="10.5" x2="12" y2="22" />
   </svg>
 );
 
