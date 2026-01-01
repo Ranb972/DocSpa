@@ -1,6 +1,6 @@
 // Custom Dental SVG Icons - professional dental-specific icons
 
-// Dental Mirror - for Conservative Dentistry
+// Dental Mirror + Probe - for Conservative Dentistry
 export const ToothMirror = ({ size = 24, strokeWidth = 1.5, color = 'currentColor', className = '' }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -11,14 +11,19 @@ export const ToothMirror = ({ size = 24, strokeWidth = 1.5, color = 'currentColo
     stroke={color}
     strokeWidth={strokeWidth}
     strokeLinecap="round"
+    strokeLinejoin="round"
     className={className}
   >
-    <ellipse cx="12" cy="6" rx="5" ry="4" />
-    <path d="M12 10 L12 23" />
+    {/* Mirror (left, angled) */}
+    <ellipse cx="6" cy="5" rx="3" ry="2.5" transform="rotate(-30 6 5)" />
+    <line x1="8" y1="7" x2="14" y2="18" />
+    {/* Probe (right, angled) */}
+    <line x1="16" y1="7" x2="10" y2="18" />
+    <circle cx="17" cy="5" r="1" />
   </svg>
 );
 
-// Dental Crown on Tooth - for Restorative Treatments
+// Tooth with Sparkles - for Restorative Treatments
 export const ToothCrown = ({ size = 24, strokeWidth = 1.5, color = 'currentColor', className = '' }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -32,8 +37,11 @@ export const ToothCrown = ({ size = 24, strokeWidth = 1.5, color = 'currentColor
     strokeLinejoin="round"
     className={className}
   >
-    <path d="M7 14c0 3 1 6 2 8c.5 1 1.5 1 2 0c.5-1 1-2 2-2s1.5 1 2 2c.5 1 1.5 1 2 0c1-2 2-5 2-8c0-4-2-7-6-7s-6 3-6 7z" />
-    <path d="M6 6 L18 6 L17 10 L7 10 Z" />
+    {/* Tooth body */}
+    <path d="M8 4c-2 0-3 2-3 4c0 2 0.5 4 1 6c0.5 2 1 4 1.5 4c0.5 0 1-1 1.5-1c0.5 0 1 1 1.5 1c0.5 0 1-1 1.5-1c0.5 0 1 1 1.5 1c0.5 0 1-2 1.5-4c0.5-2 1-4 1-6c0-2-1-4-3-4c-1 0-2 1-2.5 1c-0.5 0-1.5-1-2.5-1z" />
+    {/* Sparkles */}
+    <path d="M19 6 L20 8 L19 10 L18 8 Z" />
+    <path d="M21 10 L22 11 L21 12 L20 11 Z" />
   </svg>
 );
 
