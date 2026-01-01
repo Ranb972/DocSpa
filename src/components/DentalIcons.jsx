@@ -1,6 +1,6 @@
 // Custom Dental SVG Icons - professional dental-specific icons
 
-// Dental Mirror - for Conservative Dentistry (simple lollipop shape)
+// Dental Mirror - for Conservative Dentistry
 export const ToothMirror = ({ size = 24, strokeWidth = 1.5, color = 'currentColor', className = '' }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -11,11 +11,10 @@ export const ToothMirror = ({ size = 24, strokeWidth = 1.5, color = 'currentColo
     stroke={color}
     strokeWidth={strokeWidth}
     strokeLinecap="round"
-    strokeLinejoin="round"
     className={className}
   >
-    <circle cx="12" cy="7" r="5" />
-    <line x1="12" y1="12" x2="12" y2="22" />
+    <ellipse cx="12" cy="6" rx="5" ry="4" />
+    <path d="M12 10 L12 23" />
   </svg>
 );
 
@@ -33,12 +32,8 @@ export const ToothCrown = ({ size = 24, strokeWidth = 1.5, color = 'currentColor
     strokeLinejoin="round"
     className={className}
   >
-    {/* Dental Crown Cap - rounded cap that covers tooth top */}
-    <path d="M7 9 C7 5 9 3 12 3 C15 3 17 5 17 9" />
-    <line x1="7" y1="9" x2="17" y2="9" />
-
-    {/* Tooth body below the crown */}
-    <path d="M7 9 L7 12 C7 14 7.5 16 8 18 C8.3 19.5 9 21 10 21 C10.8 21 11 20 11.2 19 C11.5 17.5 12 17 12 17 C12 17 12.5 17.5 12.8 19 C13 20 13.2 21 14 21 C15 21 15.7 19.5 16 18 C16.5 16 17 14 17 12 L17 9" />
+    <path d="M7 14c0 3 1 6 2 8c.5 1 1.5 1 2 0c.5-1 1-2 2-2s1.5 1 2 2c.5 1 1.5 1 2 0c1-2 2-5 2-8c0-4-2-7-6-7s-6 3-6 7z" />
+    <path d="M6 6 L18 6 L17 10 L7 10 Z" />
   </svg>
 );
 
