@@ -264,7 +264,7 @@ export const translations = {
     // Clinic Section
     clinic: {
       badge: 'The Clinic',
-      title: 'Advanced and Relaxing Atmosphere',
+      title: 'State-of-the-Art Clinic, Relaxing Vibe',
       description: 'Our clinic in Rehovot offers professional dental treatments in a pleasant and family-friendly atmosphere. We emphasize personal and warm care for every patient.',
       features: {
         knowledge: { title: 'Knowledge & Experience', description: 'Professional expertise and comprehensive training for optimal care' },
