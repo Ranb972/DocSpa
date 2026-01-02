@@ -155,6 +155,8 @@ export const translations = {
         wednesday: 'יום רביעי',
       },
       mapLabel: 'מפת המרפאה',
+      whatsappAvailable: 'זמינים גם בוואטסאפ',
+      whatsappButton: 'שלחו הודעה בוואטסאפ',
     },
 
     // Footer
@@ -321,6 +323,8 @@ export const translations = {
         wednesday: 'Wednesday',
       },
       mapLabel: 'Clinic Map',
+      whatsappAvailable: 'Also available on WhatsApp',
+      whatsappButton: 'Message on WhatsApp',
     },
 
     // Footer
